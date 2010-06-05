@@ -11,7 +11,7 @@ class User(db.Model):
     Status = 
     
     
-class UserTraits:
+class UserTraits(db.Model):
     User = db.ReferenceProperty(User, collection_name='UserTraits')
     Points = db.IntegerProperty()
     Trait = TaskType()
