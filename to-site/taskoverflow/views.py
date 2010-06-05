@@ -10,7 +10,9 @@ def task_view(request, task_id):
                                context_instance=RequestContext(request))
     
 def task_new(request):
-    return HttpResponse("Creating task")
+    task_templates = [{'id': 'languagetranslate', 'name': 'Language Translation'}]
+    return render_to_response('task_new.html', {'task_templates': task_templates},
+                               context_instance=RequestContext(request))
 
 def tasks_search(request): 
     # Extract query params, do search
