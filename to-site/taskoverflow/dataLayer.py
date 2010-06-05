@@ -1,4 +1,19 @@
 import models
+import settings
+
+def memoize(key, time=60):
+    """Decorator to memoize functions using memcache."""
+    def decorator(fxn):
+        def wrapper(*args, **kwargs):
+            data = memcache.get(key)
+            if data is not None:
+                return data
+            data = fxn(*args, **kwargs)
+            memcache.set(key, data, time)
+            return data
+        return wrapper if not settings.DEBUG else fxn
+    return decorator
+
 
 class DataLayer():
     def GetTaskTypes(self):
@@ -6,11 +21,12 @@ class DataLayer():
         types = models.TaskType().all().fetch(1000)
         return types
         
+    @memoize('tasks')   
     def GetTasks(self):
         #TODO: memcache
         #TODO: sort
-        types = models.Tasks().all().fetch(1000)
-        return types
+        tasks = models.Task().all().fetch(1000)
+        return tasks
     
     def CreateUser(self,Name,DateOfBirth,UserName):
         newUser = models.User()
