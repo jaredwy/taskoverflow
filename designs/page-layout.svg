@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1200"
+   height="800"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.47pre4 r22446"
+   sodipodi:docname="page-layout.svg"
+   style="display:inline">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient6274">
+      <stop
+         id="stop6276"
+         offset="0"
+         style="stop-color:#ffeeaa;stop-opacity:1" />
+      <stop
+         style="stop-color:#d4aa00;stop-opacity:1"
+         offset="0.22255635"
+         id="stop6278" />
+      <stop
+         id="stop6280"
+         offset="1"
+         style="stop-color:#806600;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4694">
+      <stop
+         style="stop-color:#4d4d4d;stop-opacity:1"
+         offset="0"
+         id="stop4696" />
+      <stop
+         id="stop4702"
+         offset="0.22255635"
+         style="stop-color:#333333;stop-opacity:1" />
+      <stop
+         style="stop-color:#4d4d4d;stop-opacity:1"
+         offset="1"
+         id="stop4698" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3887">
+      <stop
+         style="stop-color:#ececec;stop-opacity:1"
+         offset="0"
+         id="stop3889" />
+      <stop
+         style="stop-color:#f9f9f9;stop-opacity:1"
+         offset="1"
+         id="stop3891" />
+    </linearGradient>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3887"
+       id="linearGradient3893"
+       x1="130"
+       y1="382.36218"
+       x2="130"
+       y2="492.36218"
+       gradientUnits="userSpaceOnUse" />
+    <inkscape:perspective
+       id="perspective4619"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4694"
+       id="linearGradient4700"
+       x1="90"
+       y1="70"
+       x2="90"
+       y2="110"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,252.36218)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3887"
+       id="linearGradient4718"
+       gradientUnits="userSpaceOnUse"
+       x1="130"
+       y1="382.36218"
+       x2="130"
+       y2="492.36218" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4694"
+       id="linearGradient4720"
+       gradientUnits="userSpaceOnUse"
+       x1="90"
+       y1="70"
+       x2="90"
+       y2="110" />
+    <inkscape:perspective
+       id="perspective6091"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6274"
+       id="linearGradient6272"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(3,0,0,1,300,0)"
+       x1="90"
+       y1="70"
+       x2="90"
+       y2="110" />
+    <inkscape:perspective
+       id="perspective6306"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.2010763"
+     inkscape:cx="602.66967"
+     inkscape:cy="584.74344"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer6"
+     showgrid="true"
+     inkscape:window-width="976"
+     inkscape:window-height="691"
+     inkscape:window-x="54"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-global="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2816"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       spacingx="10px"
+       spacingy="10px"
+       dotted="true" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="-10,730"
+       id="guide3646" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="300,650"
+       id="guide3656" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="background-layout"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-252.36218)">
+    <rect
+       style="fill:#cccccc;fill-opacity:1;stroke:none"
+       id="rect2869"
+       width="300"
+       height="730"
+       x="0"
+       y="322.36218" />
+    <rect
+       y="252.36218"
+       x="0"
+       height="69.999992"
+       width="1200"
+       id="rect2820"
+       style="fill:#808080;fill-opacity:1;stroke:none" />
+    <text
+       xml:space="preserve"
+       style="font-size:32.64089203px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+       x="15.236786"
+       y="298.53296"
+       id="text3658"><tspan
+         sodipodi:role="line"
+         id="tspan3660"
+         x="15.236786"
+         y="298.53296">TASKOVERFLOW</tspan></text>
+    <g
+       id="g3804">
+      <g
+         transform="translate(100,8.4743321)"
+         id="g2843">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:#333333;stroke-width:1"
+           id="rect2837"
+           width="450"
+           height="31.525654"
+           x="250"
+           y="262.36218"
+           rx="5"
+           ry="5" />
+        <text
+           xml:space="preserve"
+           style="font-size:17.56184196px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+           x="270"
+           y="283.88785"
+           id="text2839"><tspan
+             sodipodi:role="line"
+             id="tspan2841"
+             x="270"
+             y="283.88785">task type search</tspan></text>
+      </g>
+      <path
+         id="path3688"
+         d="m 770.06277,270.36219 0,32"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         transform="matrix(0,0.61359646,-0.61359646,0,804.36269,-196.4171)"
+         d="m 780.28364,40.169915 0,-17.775698 15.3942,8.887849 -15.3942,8.887849 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="true"
+         sodipodi:arg2="3.1415927"
+         sodipodi:arg1="2.0943951"
+         sodipodi:r2="5.131402"
+         sodipodi:r1="10.262804"
+         sodipodi:cy="31.282066"
+         sodipodi:cx="785.41504"
+         sodipodi:sides="3"
+         id="path3690"
+         style="fill:#1a1a1a;fill-opacity:1;stroke:none"
+         sodipodi:type="star" />
+    </g>
+    <g
+       id="g4634"
+       transform="translate(0,23.992185)">
+      <image
+         y="366.36218"
+         x="10"
+         id="image4636"
+         height="16"
+         width="16"
+         xlink:href="file:///development/assets/icons/fugue-icons-2.2.1/icons/sticky-note-pin.png" />
+      <text
+         xml:space="preserve"
+         style="font-size:14.86952114px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+         x="36"
+         y="378.37"
+         id="text4638"><tspan
+           sodipodi:role="line"
+           id="tspan4640"
+           x="36"
+           y="378.37">English to Spanish SMS translation</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+       x="945.39856"
+       y="121.99403"
+       id="text6427"
+       transform="translate(0,252.36218)"><tspan
+         sodipodi:role="line"
+         id="tspan6429"
+         x="945.39856"
+         y="121.99403" /></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="sidebar"
+     style="display:inline">
+    <g
+       transform="translate(0,-252.36218)"
+       id="g3895">
+      <rect
+         y="342.36218"
+         x="0"
+         height="180"
+         width="300"
+         id="rect3885"
+         style="fill:url(#linearGradient3893);fill-opacity:1;stroke:none" />
+      <g
+         id="g3869">
+        <rect
+           style="fill:url(#linearGradient4700);fill-opacity:1;stroke:none"
+           id="rect3861"
+           width="300"
+           height="30"
+           x="0"
+           y="322.36218" />
+        <text
+           xml:space="preserve"
+           style="font-size:14.20851421px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+           x="20"
+           y="342.36218"
+           id="text3863"><tspan
+             sodipodi:role="line"
+             id="tspan3865"
+             x="20"
+             y="342.36218">Recent Tasks</tspan></text>
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:square;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 0.5,352.71318 299.5,0"
+           id="path3867" />
+      </g>
+    </g>
+    <g
+       transform="translate(0,-252.36218)"
+       id="g4629">
+      <image
+         xlink:href="file:///development/assets/icons/fugue-icons-2.2.1/icons/sticky-note-pin.png"
+         width="16"
+         height="16"
+         id="image4621"
+         x="10"
+         y="366.36218" />
+      <text
+         id="text4625"
+         y="378.37"
+         x="36"
+         style="font-size:14.86952114px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#666666;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+         xml:space="preserve"><tspan
+           y="378.37"
+           x="36"
+           id="tspan4627"
+           sodipodi:role="line">English to Spanish SMS translation</tspan></text>
+    </g>
+    <g
+       transform="translate(0,-228.37)"
+       id="g4642">
+      <image
+         xlink:href="file:///development/assets/icons/fugue-icons-2.2.1/icons/sticky-note-pin.png"
+         width="16"
+         height="16"
+         id="image4644"
+         x="10"
+         y="366.36218" />
+      <text
+         id="text4646"
+         y="378.37"
+         x="36"
+         style="font-size:14.86952114px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+         xml:space="preserve"><tspan
+           y="378.37"
+           x="36"
+           id="tspan4648"
+           sodipodi:role="line">English to Spanish SMS translation</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14.86952114px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#666666;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+         x="36"
+         y="378.37"
+         id="text4666"><tspan
+           sodipodi:role="line"
+           id="tspan4668"
+           x="36"
+           y="378.37">English to Spanish SMS translation</tspan></text>
+    </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4670"
+       style="font-size:9px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:justify;text-anchor:start;fill:#37abc8;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+       transform="translate(-1.0406353,0)"><flowRegion
+         id="flowRegion4672"><rect
+           id="rect4674"
+           width="233.39137"
+           height="51.054901"
+           x="37.649258"
+           y="158.9451"
+           style="font-size:9px;text-align:justify;text-anchor:start;fill:#37abc8" /></flowRegion><flowPara
+         id="flowPara4676"
+         style="font-size:9px;text-align:justify;text-anchor:start;fill:#37abc8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed aliquet arcu. Suspendisse accumsan semper lectus, at posuere metus pharetra a. Vivamus condimentum tincidunt metus,</flowPara></flowRoot>    <g
+       id="g4704"
+       transform="translate(0,-52.71318)">
+      <rect
+         style="fill:url(#linearGradient4718);fill-opacity:1;stroke:none"
+         id="rect4706"
+         width="300"
+         height="180"
+         x="0"
+         y="342.36218" />
+      <g
+         id="g4708">
+        <rect
+           transform="translate(0,252.36218)"
+           y="70"
+           x="0"
+           height="30"
+           width="300"
+           id="rect4710"
+           style="fill:url(#linearGradient4720);fill-opacity:1;stroke:none" />
+        <text
+           id="text4712"
+           y="342.36218"
+           x="20"
+           style="font-size:14.20851421px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+           xml:space="preserve"><tspan
+             y="342.36218"
+             x="20"
+             id="tspan4714"
+             sodipodi:role="line">Badge Progress</tspan></text>
+        <path
+           id="path4716"
+           d="m 0.5,352.71318 299.5,0"
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:square;stroke-linejoin:miter;stroke-opacity:1" />
+      </g>
+    </g>
+    <g
+       id="g4744">
+      <g
+         transform="translate(0,10)"
+         id="g4736">
+        <rect
+           style="fill:#cccccc;fill-opacity:1;stroke:#808080"
+           id="rect4729"
+           width="259.11313"
+           height="19.99999"
+           x="20"
+           y="320"
+           rx="4"
+           ry="4" />
+        <path
+           style="fill:#aad400;fill-opacity:1;stroke:#808080;stroke-width:1"
+           d="m 24,320 c -2.216,0 -4,1.784 -4,4 l 0,12 c 0,2.216 1.784,4 4,4 l 76,0 86,0 4,0 0,-4 0,-12 0,-4 -4,0 -86,0 -76,0 z"
+           id="rect4731" />
+      </g>
+      <text
+         id="text4740"
+         y="322.79843"
+         x="30"
+         style="font-size:14.28220367px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+         xml:space="preserve"><tspan
+           y="322.79843"
+           x="30"
+           id="tspan4742"
+           sodipodi:role="line">translator</tspan></text>
+    </g>
+    <g
+       id="g4751"
+       transform="translate(0,55.201569)">
+      <g
+         id="g4753"
+         transform="translate(0,10)">
+        <rect
+           ry="4"
+           rx="4"
+           y="320"
+           x="20"
+           height="19.99999"
+           width="259.11313"
+           id="rect4755"
+           style="fill:#cccccc;fill-opacity:1;stroke:#808080" />
+        <path
+           id="path4757"
+           d="m 24,320 c -2.216,0 -4,1.784 -4,4 l 0,12 c 0,2.216 1.784,4 4,4 l 76,0 30,0 0,-20 -30,0 -76,0 z"
+           style="fill:#aad400;fill-opacity:1;stroke:#808080;stroke-width:1"
+           sodipodi:nodetypes="ccccccccc" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:14.28220367px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+         x="30"
+         y="322.79843"
+         id="text4759"><tspan
+           sodipodi:role="line"
+           id="tspan4761"
+           x="30"
+           y="322.79843">mapper</tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="type-search-language"
+     style="display:inline">
+    <rect
+       style="fill:#e6e6e6;fill-opacity:1;stroke:none"
+       id="rect3644"
+       width="900.00006"
+       height="278.3497"
+       x="300"
+       y="71.650299" />
+    <g
+       id="g3676">
+      <g
+         id="g3652">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 300,350 900,0 0,0"
+           id="path3648" />
+        <rect
+           style="fill:#333333;fill-opacity:1;stroke:none"
+           id="rect3650"
+           width="50"
+           height="10"
+           x="725"
+           y="350" />
+      </g>
+      <path
+         transform="matrix(0.38298996,0,0,0.38298996,462.75752,219.99604)"
+         d="m 750,360 -8.66025,-15 17.3205,0 L 750,360 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="true"
+         sodipodi:arg2="2.6179939"
+         sodipodi:arg1="1.5707963"
+         sodipodi:r2="5"
+         sodipodi:r1="10"
+         sodipodi:cy="350"
+         sodipodi:cx="750"
+         sodipodi:sides="3"
+         id="path3664"
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         sodipodi:type="star" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:16.69860268px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+       x="370.00717"
+       y="121.00079"
+       id="text3697"><tspan
+         sodipodi:role="line"
+         id="tspan3699"
+         x="370.00717"
+         y="121.00079" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:32.6416626px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+       x="350.28384"
+       y="123.14775"
+       id="text3705"><tspan
+         sodipodi:role="line"
+         id="tspan3707"
+         x="350.28384"
+         y="123.14775">I can translate:</tspan></text>
+    <g
+       id="g3742"
+       transform="translate(0,-6.8522484)">
+      <g
+         id="g3719">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:#333333;stroke-width:1"
+           id="rect3692"
+           width="240"
+           height="33"
+           x="350"
+           y="157"
+           rx="5"
+           ry="5" />
+        <text
+           xml:space="preserve"
+           style="font-size:20.44413376px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+           x="370"
+           y="180.54663"
+           id="text3711"><tspan
+             sodipodi:role="line"
+             id="tspan3713"
+             x="370"
+             y="180.54663">English</tspan></text>
+        <path
+           style="fill:#333333;fill-opacity:1;stroke:#333333;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 560,156.79564 0,33.15182 0,0 0,0"
+           id="path3715" />
+        <path
+           sodipodi:type="star"
+           style="fill:#333333;fill-opacity:1;stroke:none"
+           id="path3717"
+           sodipodi:sides="3"
+           sodipodi:cx="568.69324"
+           sodipodi:cy="166.27423"
+           sodipodi:r1="5.6742473"
+           sodipodi:r2="2.8371236"
+           sodipodi:arg1="1.5707963"
+           sodipodi:arg2="2.6179939"
+           inkscape:flatsided="true"
+           inkscape:rounded="0"
+           inkscape:randomized="0"
+           d="m 568.69324,171.94848 -4.91405,-8.51137 9.82809,0 -4.91404,8.51137 z"
+           transform="matrix(1.2814224,0,0,1.2669324,-153.21013,-38.235149)" />
+      </g>
+      <g
+         transform="translate(296.35974,0)"
+         id="g3726">
+        <rect
+           ry="5"
+           rx="5"
+           y="157"
+           x="350"
+           height="33"
+           width="240"
+           id="rect3728"
+           style="fill:#ffffff;fill-opacity:1;stroke:#333333;stroke-width:1" />
+        <text
+           id="text3730"
+           y="180.54663"
+           x="370"
+           style="font-size:20.44413376px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+           xml:space="preserve"><tspan
+             y="180.54663"
+             x="370"
+             id="tspan3732"
+             sodipodi:role="line">Spanish</tspan></text>
+        <path
+           id="path3734"
+           d="m 560,156.79564 0,33.15182 0,0 0,0"
+           style="fill:#333333;fill-opacity:1;stroke:#333333;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path
+           transform="matrix(1.2814224,0,0,1.2669324,-153.21013,-38.235149)"
+           d="m 568.69324,171.94848 -4.91405,-8.51137 9.82809,0 -4.91404,8.51137 z"
+           inkscape:randomized="0"
+           inkscape:rounded="0"
+           inkscape:flatsided="true"
+           sodipodi:arg2="2.6179939"
+           sodipodi:arg1="1.5707963"
+           sodipodi:r2="2.8371236"
+           sodipodi:r1="5.6742473"
+           sodipodi:cy="166.27423"
+           sodipodi:cx="568.69324"
+           sodipodi:sides="3"
+           id="path3736"
+           style="fill:#333333;fill-opacity:1;stroke:none"
+           sodipodi:type="star" />
+      </g>
+      <text
+         id="text3738"
+         y="180.11792"
+         x="607.28729"
+         style="font-size:23.1793499px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+         xml:space="preserve"><tspan
+           y="180.11792"
+           x="607.28729"
+           id="tspan3740"
+           sodipodi:role="line">to</tspan></text>
+    </g>
+    <g
+       id="g3758"
+       transform="translate(0,45.234419)">
+      <g
+         id="g3760">
+        <rect
+           ry="5"
+           rx="5"
+           y="157"
+           x="350"
+           height="33"
+           width="240"
+           id="rect3762"
+           style="fill:#ffffff;fill-opacity:1;stroke:#333333;stroke-width:1" />
+        <text
+           id="text3764"
+           y="180.54663"
+           x="370"
+           style="font-size:20.44413376px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+           xml:space="preserve"><tspan
+             y="180.54663"
+             x="370"
+             id="tspan3766"
+             sodipodi:role="line">Spanish</tspan></text>
+        <path
+           id="path3768"
+           d="m 560,156.79564 0,33.15182 0,0 0,0"
+           style="fill:#333333;fill-opacity:1;stroke:#333333;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path
+           transform="matrix(1.2814224,0,0,1.2669324,-153.21013,-38.235149)"
+           d="m 568.69324,171.94848 -4.91405,-8.51137 9.82809,0 -4.91404,8.51137 z"
+           inkscape:randomized="0"
+           inkscape:rounded="0"
+           inkscape:flatsided="true"
+           sodipodi:arg2="2.6179939"
+           sodipodi:arg1="1.5707963"
+           sodipodi:r2="2.8371236"
+           sodipodi:r1="5.6742473"
+           sodipodi:cy="166.27423"
+           sodipodi:cx="568.69324"
+           sodipodi:sides="3"
+           id="path3770"
+           style="fill:#333333;fill-opacity:1;stroke:none"
+           sodipodi:type="star" />
+      </g>
+      <g
+         id="g3772"
+         transform="translate(296.35974,0)">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:#333333;stroke-width:1"
+           id="rect3774"
+           width="240"
+           height="33"
+           x="350"
+           y="157"
+           rx="5"
+           ry="5" />
+        <text
+           xml:space="preserve"
+           style="font-size:20.44413376px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+           x="370"
+           y="180.54663"
+           id="text3776"><tspan
+             sodipodi:role="line"
+             id="tspan3778"
+             x="370"
+             y="180.54663">English</tspan></text>
+        <path
+           style="fill:#333333;fill-opacity:1;stroke:#333333;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 560,156.79564 0,33.15182 0,0 0,0"
+           id="path3780" />
+        <path
+           sodipodi:type="star"
+           style="fill:#333333;fill-opacity:1;stroke:none"
+           id="path3782"
+           sodipodi:sides="3"
+           sodipodi:cx="568.69324"
+           sodipodi:cy="166.27423"
+           sodipodi:r1="5.6742473"
+           sodipodi:r2="2.8371236"
+           sodipodi:arg1="1.5707963"
+           sodipodi:arg2="2.6179939"
+           inkscape:flatsided="true"
+           inkscape:rounded="0"
+           inkscape:randomized="0"
+           d="m 568.69324,171.94848 -4.91405,-8.51137 9.82809,0 -4.91404,8.51137 z"
+           transform="matrix(1.2814224,0,0,1.2669324,-153.21013,-38.235149)" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:23.1793499px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+         x="607.28729"
+         y="180.11792"
+         id="text3784"><tspan
+           sodipodi:role="line"
+           id="tspan3786"
+           x="607.28729"
+           y="180.11792">to</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:24.14901543px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+       x="954"
+       y="118"
+       id="text3788"><tspan
+         sodipodi:role="line"
+         id="tspan3790"
+         x="954"
+         y="118">add more languages</tspan></text>
+    <g
+       transform="translate(0,-252.36218)"
+       id="g3812">
+      <g
+         id="g3814"
+         transform="translate(100,8.4743321)">
+        <rect
+           ry="5"
+           rx="5"
+           y="262.36218"
+           x="250"
+           height="31.525654"
+           width="450"
+           id="rect3816"
+           style="fill:#ffffff;fill-opacity:1;stroke:#333333;stroke-width:1" />
+        <text
+           id="text3818"
+           y="283.88785"
+           x="270"
+           style="font-size:17.56184196px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+           xml:space="preserve"><tspan
+             y="283.88785"
+             x="270"
+             id="tspan3820"
+             sodipodi:role="line">Language Translation</tspan></text>
+      </g>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 770.06277,270.36219 0,32"
+         id="path3822" />
+      <path
+         sodipodi:type="star"
+         style="fill:#1a1a1a;fill-opacity:1;stroke:none"
+         id="path3824"
+         sodipodi:sides="3"
+         sodipodi:cx="785.41504"
+         sodipodi:cy="31.282066"
+         sodipodi:r1="10.262804"
+         sodipodi:r2="5.131402"
+         sodipodi:arg1="2.0943951"
+         sodipodi:arg2="3.1415927"
+         inkscape:flatsided="true"
+         inkscape:rounded="0"
+         inkscape:randomized="0"
+         d="m 780.28364,40.169915 0,-17.775698 15.3942,8.887849 -15.3942,8.887849 z"
+         transform="matrix(0,0.61359646,-0.61359646,0,804.36269,-196.4171)" />
+    </g>
+    <g
+       id="g3853"
+       transform="translate(0,-40)">
+      <g
+         transform="matrix(0.98128497,0,0,1,6.5502584,0)"
+         id="g3845">
+        <rect
+           style="fill:#b3b3b3;fill-opacity:1;stroke:#ffffff;stroke-width:1.00949097"
+           id="rect3833"
+           width="244.57726"
+           height="40"
+           x="350"
+           y="300"
+           rx="4.0762877"
+           ry="4" />
+      </g>
+      <text
+         id="text3849"
+         y="326.78613"
+         x="440"
+         style="font-size:20.86955833px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+         xml:space="preserve"><tspan
+           y="326.78613"
+           x="440"
+           id="tspan3851"
+           sodipodi:role="line">search</tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="type-search-map"
+     style="display:inline" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="search-results"
+     style="display:inline">
+    <rect
+       style="fill:#e6e6e6;fill-opacity:1;stroke:none"
+       id="rect4766"
+       width="900"
+       height="730"
+       x="300"
+       y="70" />
+    <rect
+       y="70"
+       x="300"
+       height="30"
+       width="900"
+       id="rect6265"
+       style="fill:url(#linearGradient6272);fill-opacity:1;stroke:none;display:inline" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 300.00002,100 1200,100"
+       id="path6282" />
+    <text
+       id="text6312"
+       y="90"
+       x="320"
+       style="font-size:14.20851421px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#1a1a1a;fill-opacity:1;stroke:none;display:inline;font-family:Georgia;-inkscape-font-specification:Georgia"
+       xml:space="preserve"><tspan
+         y="90"
+         x="320"
+         id="tspan6314"
+         sodipodi:role="line">Search Results</tspan></text>
+    <g
+       id="g6354">
+      <g
+         id="g6343">
+        <rect
+           transform="matrix(2.7272727,0,0,1,-518.18181,-40)"
+           y="140"
+           x="300"
+           height="40"
+           width="330"
+           id="rect6320"
+           style="fill:#ffffff;fill-opacity:1;stroke:none;display:inline" />
+        <text
+           xml:space="preserve"
+           style="font-size:16.20597458px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+           x="319.97162"
+           y="124.36802"
+           id="text4768"><tspan
+             sodipodi:role="line"
+             id="tspan4770"
+             x="319.97162"
+             y="124.36802">English to Spanish SMS translation</tspan></text>
+      </g>
+      <g
+         id="g6348">
+        <g
+           id="g6324"
+           transform="matrix(2.7272727,0,0,1,-518.18181,-40)">
+          <rect
+             style="fill:#cccccc;fill-opacity:1;stroke:none"
+             id="rect6322"
+             width="330"
+             height="40"
+             x="300"
+             y="180" />
+        </g>
+        <text
+           id="text6332"
+           y="164.36801"
+           x="319.97162"
+           style="font-size:16.20597458px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+           xml:space="preserve"><tspan
+             y="164.36801"
+             x="319.97162"
+             id="tspan6334"
+             sodipodi:role="line">English to Spanish SMS translation</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g6405"
+       transform="translate(0,150)">
+      <g
+         id="g6407">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:none;display:inline"
+           id="rect6409"
+           width="330"
+           height="40"
+           x="300"
+           y="140"
+           transform="matrix(2.7272727,0,0,1,-518.18181,-40)" />
+        <text
+           id="text6411"
+           y="124.36802"
+           x="319.97162"
+           style="font-size:16.20597458px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+           xml:space="preserve"><tspan
+             y="124.36802"
+             x="319.97162"
+             id="tspan6413"
+             sodipodi:role="line">English to Spanish SMS translation</tspan></text>
+      </g>
+      <g
+         id="g6415">
+        <g
+           transform="matrix(2.7272727,0,0,1,-518.18181,-40)"
+           id="g6417">
+          <rect
+             y="180"
+             x="300"
+             height="40"
+             width="330"
+             id="rect6419"
+             style="fill:#cccccc;fill-opacity:1;stroke:none" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-size:16.20597458px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+           x="319.97162"
+           y="164.36801"
+           id="text6421"><tspan
+             sodipodi:role="line"
+             id="tspan6423"
+             x="319.97162"
+             y="164.36801">English to Spanish SMS translation</tspan></text>
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:25.87604904px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+       x="1100"
+       y="166.76593"
+       id="text6431"><tspan
+         sodipodi:role="line"
+         id="tspan6433"
+         x="1100"
+         y="166.76593">preview</tspan></text>
+    <rect
+       style="fill:#e6e6e6;fill-opacity:1;stroke:none"
+       id="rect6435"
+       width="900"
+       height="70"
+       x="300"
+       y="180" />
+    <g
+       transform="translate(0,230)"
+       id="g6437">
+      <g
+         id="g6439">
+        <rect
+           transform="matrix(2.7272727,0,0,1,-518.18181,-40)"
+           y="140"
+           x="300"
+           height="40"
+           width="330"
+           id="rect6441"
+           style="fill:#ffffff;fill-opacity:1;stroke:none;display:inline" />
+        <text
+           xml:space="preserve"
+           style="font-size:16.20597458px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+           x="319.97162"
+           y="124.36802"
+           id="text6443"><tspan
+             sodipodi:role="line"
+             id="tspan6445"
+             x="319.97162"
+             y="124.36802">English to Spanish SMS translation</tspan></text>
+      </g>
+      <g
+         id="g6447">
+        <g
+           id="g6449"
+           transform="matrix(2.7272727,0,0,1,-518.18181,-40)">
+          <rect
+             style="fill:#cccccc;fill-opacity:1;stroke:none"
+             id="rect6451"
+             width="330"
+             height="40"
+             x="300"
+             y="180" />
+        </g>
+        <text
+           id="text6453"
+           y="164.36801"
+           x="319.97162"
+           style="font-size:16.20597458px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+           xml:space="preserve"><tspan
+             y="164.36801"
+             x="319.97162"
+             id="tspan6455"
+             sodipodi:role="line">English to Spanish SMS translation</tspan></text>
+      </g>
+    </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot6467"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Georgia;-inkscape-font-specification:Georgia"
+       transform="translate(-10.078326,0)"><flowRegion
+         id="flowRegion6469"><rect
+           id="rect6471"
+           width="559.73615"
+           height="38.944061"
+           x="330.34219"
+           y="191.05594" /></flowRegion><flowPara
+         id="flowPara6473"
+         style="font-size:11px">Translation of 100 short messages from trapped Spanish workers in a building site</flowPara></flowRoot>  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="slices"
+     style="opacity:0.5;display:none">
+    <rect
+       style="fill:#00ff00;fill-opacity:1;stroke:none"
+       id="recent-tasks"
+       width="300"
+       height="200"
+       x="0"
+       y="70"
+       inkscape:label="#rect4723"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:label="#rect4723"
+       y="270"
+       x="0"
+       height="160"
+       width="300"
+       id="widget-badge-progress"
+       style="fill:#00ff00;fill-opacity:1;stroke:none" />
+  </g>
+</svg>
