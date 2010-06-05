@@ -1,23 +1,31 @@
 import models
 import settings
+import logging
 
-def memoize(key, time=60):
-    """Decorator to memoize functions using memcache."""
+def memoize(region="", time=3600):
+    """Decorator to memoize functions using memcache.
+       The calling function must give a memizekey named parameter
+    """
     def decorator(fxn):
         def wrapper(*args, **kwargs):
-            data = memcache.get(key)
-            if data is not None:
-                return data
-            data = fxn(*args, **kwargs)
-            memcache.set(key, data, time)
-            return data
-        return wrapper if not settings.DEBUG else fxn
-    return decorator
+            if (not "memizekey" in kwargs):
+                raise Exception("memize-d function does not send key")
+            key = region + kwargs["memizekey"]
+            del kwargs["memizekey"]
 
+            data = memcache.get(key)
+            if data is None or not settings.DEBUG:
+                data = fxn(*args, **kwargs)
+                memcache.set(key, data, time)
+                logging.info("Cached with key" + key);
+            else: logging.info("Cache hit");
+            return data
+        return wrapper
+    return decorator 
 
 class DataLayer():
+    #@memoize('tasktypes')  
     def GetTaskTypes(self):
-        #TODO: memcache
         types = models.TaskType().all().fetch(1000)
         return types
     
@@ -26,12 +34,12 @@ class DataLayer():
         types = models.TaskType().get(template_key)
         return types   
         
-    @memoize('tasks')   
+    #@memoize('tasks')   
     def GetTasks(self):
-        #TODO: memcache
         #TODO: sort
         tasks = models.Task().all().fetch(1000)
         return tasks
+    
     
     def CreateUser(self,Name,DateOfBirth,UserName):
         newUser = models.User()
@@ -39,8 +47,7 @@ class DataLayer():
         newUser.DateOfBirth = DateOfBirth
         newUser.UserName = UserName
         newUser.Put()
-        
-        #TODO: flush memcache
+
        
     def CreateTask(self,title,expiration,estimatedTime,taskType,points=0):
         newTask = models.Task()
@@ -51,8 +58,7 @@ class DataLayer():
         task.TaskType = GetTaskType(taskType)
         task.put()
         
-        #TODO: flush memcache
-    
+    #@memoize('tasktypes')  
     def GetTaskType(id):
         #TODO: add memcache
         return models.TaskType.get_by_id(id)

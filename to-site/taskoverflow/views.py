@@ -10,13 +10,14 @@ from django.utils import simplejson
 
 import models
 import dataLayer
+import forms
+
 
 def task_view(request, task_id):
     return render_to_response('task_view.html', {},
                                context_instance=RequestContext(request))
     
 def task_new(request):
-    data = dataLayer.DataLayer()
     templates = data.GetTaskTypes()
     return render_to_response('task_new.html', {'task_templates': templates},
                                context_instance=RequestContext(request))
