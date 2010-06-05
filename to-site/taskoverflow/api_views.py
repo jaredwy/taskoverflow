@@ -7,27 +7,52 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.shortcuts import get_object_or_404, render_to_response
+from django.utils import simplejson
+from django.core import validators
 # from django.core.validators
 
-# TODO: move this into a library out of the views (maybe??)
-def apigen_validate(request, instructions):
-    validation_errors = {}
+class APIError(object):
+    errorType = None
+    params = {}
     
+    def setParam(self, keyname, value = None):
+        self.params[keyname] = value
+    
+    def __json__(self):
+        json_dict = { 'errorType': self.errorType }
+        
+        # iterate through the parameters and push them in to the dict
+        for k, v in self.params.iteritems():
+            json_dict[k] = v
+            
+        return json_dict
+        
+class APIValidationError(APIError):
+    target = None
+    
+    def __init__(self, message, target):
+        self.errorType = "validation"
+        self.setParam('message', message)
+        self.setParam('target', target)
+
+# TODO: move this into a library out of the views (maybe??)
+def apigen_validate(request, instructions, errors):
     # iterate through the instructions and check to see if everything stacks up
     for fname, finst in instructions.iteritems():
         print >> sys.stderr, "checking validity of field: %s\n" % fname,
         
         # if the field is required and no data is supplied then add a validation error
         if (finst['required'] and (not request.POST.__contains__(fname))):
-            validation_errors[fname] = "Field is required"
+            errors.append(APIValidationError(message = "Field is required", target = fname))
+        
+        # TODO: run sql injection attack checks    
+        
         # if we get past the requiredness check, let run the specified validators
-            
-    return validation_errors
-    
+
 # TODO: move this to the module aswell
-def render_validation_error(validation_errors):
-    # TODO: serialize this to JSON
-    return HttpResponse(validation_errors)
+def render_errors(errors):
+    # TODO: make this JSON serialization more robust
+    return HttpResponse(simplejson.dumps([e.__json__() for e in errors]))
 
 
 """
@@ -86,8 +111,11 @@ def task_create(request):
         }}
 
     # ask for some validation
-    validation_errors = apigen_validate(request, param_instructions)
+    errors = [];
+    apigen_validate(request, param_instructions, errors)
     
     # if we have validation errors then wrap a validaton error response
-    if (validation_errors):
-        return render_validation_error(validation_errors)
+    if (errors):
+        return render_errors(errors)
+    else:
+        return HttpResponse("ALL OK")
