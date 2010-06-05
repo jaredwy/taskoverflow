@@ -1,0 +1,120 @@
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   ../.gitignore
+#	new file:   ../.google_appengine
+#	new file:   CHANGES
+#	new file:   COPYING
+#	new file:   KNOWN_ISSUES
+#	new file:   README
+#	new file:   VERSION
+#	new file:   __init__.py
+#	new file:   __init__.pyc
+#	new file:   app.yaml
+#	new file:   appengine_django/__init__.py
+#	new file:   appengine_django/__init__.pyc
+#	new file:   appengine_django/auth/__init__.py
+#	new file:   appengine_django/auth/decorators.py
+#	new file:   appengine_django/auth/middleware.py
+#	new file:   appengine_django/auth/models.py
+#	new file:   appengine_django/auth/templatetags.py
+#	new file:   appengine_django/auth/tests.py
+#	new file:   appengine_django/conf/app_template/__init__.py
+#	new file:   appengine_django/conf/app_template/models.py
+#	new file:   appengine_django/conf/app_template/views.py
+#	new file:   appengine_django/db/__init__.py
+#	new file:   appengine_django/db/__init__.pyc
+#	new file:   appengine_django/db/base.py
+#	new file:   appengine_django/db/base.pyc
+#	new file:   appengine_django/db/creation.py
+#	new file:   appengine_django/db/creation.pyc
+#	new file:   appengine_django/mail.py
+#	new file:   appengine_django/mail.pyc
+#	new file:   appengine_django/management/__init__.py
+#	new file:   appengine_django/management/__init__.pyc
+#	new file:   appengine_django/management/commands/__init__.py
+#	new file:   appengine_django/management/commands/__init__.pyc
+#	new file:   appengine_django/management/commands/console.py
+#	new file:   appengine_django/management/commands/flush.py
+#	new file:   appengine_django/management/commands/flush.pyc
+#	new file:   appengine_django/management/commands/reset.py
+#	new file:   appengine_django/management/commands/reset.pyc
+#	new file:   appengine_django/management/commands/rollback.py
+#	new file:   appengine_django/management/commands/runserver.py
+#	new file:   appengine_django/management/commands/runserver.pyc
+#	new file:   appengine_django/management/commands/startapp.py
+#	new file:   appengine_django/management/commands/startapp.pyc
+#	new file:   appengine_django/management/commands/testserver.py
+#	new file:   appengine_django/management/commands/update.py
+#	new file:   appengine_django/management/commands/vacuum_indexes.py
+#	new file:   appengine_django/models.py
+#	new file:   appengine_django/models.pyc
+#	new file:   appengine_django/replacement_imp.py
+#	new file:   appengine_django/replacement_imp.pyc
+#	new file:   appengine_django/serializer/__init__.py
+#	new file:   appengine_django/serializer/__init__.pyc
+#	new file:   appengine_django/serializer/json.py
+#	new file:   appengine_django/serializer/json.pyc
+#	new file:   appengine_django/serializer/python.py
+#	new file:   appengine_django/serializer/python.pyc
+#	new file:   appengine_django/serializer/pyyaml.py
+#	new file:   appengine_django/serializer/pyyaml.pyc
+#	new file:   appengine_django/serializer/xml.py
+#	new file:   appengine_django/serializer/xml.pyc
+#	new file:   appengine_django/sessions/__init__.py
+#	new file:   appengine_django/sessions/backends/__init__.py
+#	new file:   appengine_django/sessions/backends/__init__.pyc
+#	new file:   appengine_django/sessions/backends/db.py
+#	new file:   appengine_django/sessions/models.py
+#	new file:   appengine_django/tests/__init__.py
+#	new file:   appengine_django/tests/__init__.pyc
+#	new file:   appengine_django/tests/commands_test.py
+#	new file:   appengine_django/tests/commands_test.pyc
+#	new file:   appengine_django/tests/core_test.py
+#	new file:   appengine_django/tests/core_test.pyc
+#	new file:   appengine_django/tests/db_test.py
+#	new file:   appengine_django/tests/db_test.pyc
+#	new file:   appengine_django/tests/integration_test.py
+#	new file:   appengine_django/tests/integration_test.pyc
+#	new file:   appengine_django/tests/memcache_test.py
+#	new file:   appengine_django/tests/memcache_test.pyc
+#	new file:   appengine_django/tests/model_test.py
+#	new file:   appengine_django/tests/model_test.pyc
+#	new file:   appengine_django/tests/serialization_test.py
+#	new file:   appengine_django/tests/serialization_test.pyc
+#	new file:   django.zip
+#	new file:   index.yaml
+#	new file:   main.py
+#	new file:   manage.py
+#	new file:   settings.py
+#	new file:   settings.pyc
+#	new file:   taskoverflow/__init__.py
+#	new file:   taskoverflow/models.py
+#	new file:   taskoverflow/views.py
+#	new file:   to-site/CHANGES
+#	new file:   to-site/COPYING
+#	new file:   to-site/KNOWN_ISSUES
+#	new file:   to-site/README
+#	new file:   to-site/VERSION
+#	new file:   to-site/__init__.py
+#	new file:   to-site/__init__.pyc
+#	new file:   to-site/app.yaml
+#	new file:   to-site/django.zip
+#	new file:   to-site/main.py
+#	new file:   to-site/manage.py
+#	new file:   to-site/settings.py
+#	new file:   to-site/settings.pyc
+#	new file:   urls.py
+#
+# Changed but not updated:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    ../README
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	more
+#	out
