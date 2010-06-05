@@ -28,6 +28,10 @@ def tasktemplate(request, tasktemplate_id):
       "name": "tolanguage",
       "value": ["spanish", "english"],
       "type": "dropdown"},]
+      
+      
+      
+      
     return render_to_response('taskfield_include.html', {'task_fields': task_fields},
                                context_instance=RequestContext(request))
  

@@ -20,7 +20,6 @@ class Task(db.Model):
     expiration = db.DateTimeProperty()
     completed = db.DateTimeProperty(auto_now_add=True)
     estimatedTime = db.TimeProperty()
-    ID = db.IntegerProperty()
     points = db.IntegerProperty()
     taskType = db.ReferenceProperty(TaskType)
     taskState =  db.ReferenceProperty(TaskState)

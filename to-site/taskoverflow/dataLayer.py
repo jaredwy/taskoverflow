@@ -12,7 +12,6 @@ def memoize(region="", time=3600):
                 raise Exception("memize-d function does not send key")
             key = region + kwargs["memizekey"]
             del kwargs["memizekey"]
-
             data = memcache.get(key)
             if data is None or not settings.DEBUG:
                 data = fxn(*args, **kwargs)
@@ -52,6 +51,7 @@ class DataLayer():
         task.points = points
         task.TaskType = GetTaskType(taskType)
         task.put()
+        return task
         
     #@memoize('tasktypes')  
     def GetTaskType(id):
