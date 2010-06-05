@@ -43,8 +43,8 @@ def tasks_search(request):
 def tasks_recent(request):
     # Extract recent query params (like user), do db query
     # Render into recent tasks widget
-    tasks = [{'title': 'Translate 10 phrases'}, 
-             {'title': 'Translate 20 phrases'}]
+    data = dataLayer.DataLayer()
+    tasks = data.GetTasks()
     return render_to_response('tasks_recent.html', {'tasks': tasks},
                                context_instance=RequestContext(request))
     
@@ -60,8 +60,8 @@ def create_data(request):
     templates = create.CreateTaskTemplates()
     taskTypes = create.CreateTaskType(templates)
     traits = create.CreateUserTraits(taskTypes,users)
-    
-    create.CreateUserInfo(users)
+    create.CreateTasks(taskTypes)
+    #create.CreateUserInfo(users)
     return HttpResponse("created user")
 
 class DataCreater():
@@ -85,9 +85,14 @@ class DataCreater():
         for user in users:
             print user.Name
             
-            
-    def CreateUserTraits(selfe,type,users):
-        print type
+    def CreateTasks(self,types):
+        taska = models.Task()
+        taska.title = "Dig a hole"
+        taska.points = 10
+        taska.taskType = types[0]
+        taska.put()
+     
+    def CreateUserTraits(self,type,users):
         users[0].put()
         users[1].put()
         traita = models.UserTraits(User=users[0],Points=10,Trait=type[0])
