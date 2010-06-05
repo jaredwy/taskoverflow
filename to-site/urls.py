@@ -26,4 +26,7 @@ urlpatterns = patterns('',
     (r'^user/(?P<user_id>\d+)/$', 'taskoverflow.views.user_view'),
     # Uncomment this for admin:
 #     (r'^admin/', include('django.contrib.admin.urls')),
+    (r'^api/', include('taskoverflow.api_urls')),
+    # reference the api urls
+    
 )
