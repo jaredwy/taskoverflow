@@ -8,7 +8,7 @@ class TaskTemplate(db.Model):
 class TaskType(db.Model):
     name = db.StringProperty()
     value = db.StringProperty()
-    TaskTemplate = TaskTemplate()
+    TaskTemplate = db.ReferenceProperty(TaskTemplate)
 
 class TaskState(db.Model):
     state = db.StringProperty(required=True, choices=set(["Working", 
@@ -17,12 +17,12 @@ class TaskState(db.Model):
 class Task(db.Model):
     title = db.StringProperty()
     expiration = db.DateTimeProperty()
-    completed = db.DateTimeProperty()
+    completed = db.DateTimeProperty(auto_now_add=True)
     estimatedTime = db.TimeProperty()
     ID = db.IntegerProperty()
     points = db.IntegerProperty()
-    taskType = TaskType()
-    taskState = TaskState()
+    taskType = db.ReferenceProperty(TaskType)
+    taskState =  db.ReferenceProperty(taskState)
 
 class TaskMetaData(db.Expando):
     UserID = db.IntegerProperty()
@@ -30,18 +30,18 @@ class TaskMetaData(db.Expando):
                                     collection_name='taskMetaData')
 
 class User(db.Model):
-    ID = db.IntegerProperty()
     Name = db.StringProperty()
     DateOfBirth = db.DateProperty()
     UserName = db.StringProperty()
 
-
 class UserTraits(db.Model):
     User = db.ReferenceProperty(User, collection_name='UserTraits')
     Points = db.IntegerProperty()
-    Trait = TaskType()
+    Trait = db.ReferenceProperty(TaskType)
 
 class UserTasks(db.Model):
     Own = db.BooleanProperty()
     User = db.ReferenceProperty(User,collection_name='UserTasks')
 
+
+    
