@@ -1,5 +1,5 @@
  <div class="ui-widget-content ui-corner-all">
-  <h1 class="ui-widget-header ui-corner-all">Create Task</h1>
+  <h1 class="ui-widget-header ui-corner-all">Create Task!</h1>
    <div>
      <p>
       <label for="task_name">Task Name:</label>
@@ -11,10 +11,22 @@
      </p>
      <p>
       <label for="task_template">Task Template</label>
-      <select name="task_template">
+      <select name="task_template" onchange="addTemplate()">
        {% for task_template in task_templates %}
         <option name="{{ task_template.id }}">{{ task_template.name }}</option>
        {% endfor %}
-      </p>
+      </select>
+     </p>
+     <p id="tasktemplate"></p>
     </div>
   </div>
+  <script>
+function addTemplate() {
+  $.ajax({
+    url: '/tasktemplate/1',
+    success: function(data) {
+       $('#tasktemplate').html(data);
+    }
+  });
+}
+  </script>

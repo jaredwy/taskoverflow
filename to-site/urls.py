@@ -22,6 +22,7 @@ urlpatterns = patterns('',
     # Tasks stuff
     (r'^tasks/search*', 'taskoverflow.views.tasks_search'),
     (r'^tasks/recent*', 'taskoverflow.views.tasks_recent'),
+    (r'^tasktemplate/(?P<tasktemplate_id>\d+)/$', 'taskoverflow.views.tasktemplate'),
     # User stuff
     (r'^user/(?P<user_id>\d+)/$', 'taskoverflow.views.user_view'),
     # Uncomment this for admin:
