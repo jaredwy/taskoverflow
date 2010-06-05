@@ -14,11 +14,6 @@ def task_view(request, task_id):
                                context_instance=RequestContext(request))
     
 def task_new(request):
-    data = dataLayer.DataLayer()
-    if request.method == 'POST':
-        #TODO: data validation
-        data = TaskForm(data=self.request.POST)
-
     templates = data.GetTaskTypes()
     return render_to_response('task_new.html', {'task_templates': templates},
                                context_instance=RequestContext(request))
