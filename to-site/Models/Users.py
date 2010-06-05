@@ -8,7 +8,7 @@ class User(db.Model):
     ID = db.IntegerProperty()
     Name = db.StringProperty()
     DateOfBirth = db.DateProperty()
-    Status = 
+    UserName = db.StringProperty()
     
     
 class UserTraits(db.Model):
