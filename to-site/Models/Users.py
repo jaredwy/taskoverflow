@@ -10,7 +10,6 @@ class User(db.Model):
     DateOfBirth = db.DateProperty()
     UserName = db.StringProperty()
     
-    
 class UserTraits(db.Model):
     User = db.ReferenceProperty(User, collection_name='UserTraits')
     Points = db.IntegerProperty()

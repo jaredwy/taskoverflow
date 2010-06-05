@@ -1,0 +1,41 @@
+ <div class="ui-widget-content ui-corner-all">
+  <h1 class="ui-widget-header ui-corner-all">New Task</h1>
+   <div>
+     <form id="task_new" action="/api/task/create" method="post"> 
+     <p>
+      <label for="task_name">Task Name:</label>
+      <input type="text" name="task_name">
+     </p>
+     <p>
+      <label for="task_description">Task Description</label>
+      <textarea name="task_description"></textarea>
+     </p>
+     <p>
+      <label for="task_template">Task Template</label>
+      <select id="tasktemplate_dropdown" name="task_template" onchange="addTemplate()">
+       {% for task_template in task_templates %}
+        <option name="{{ task_template.id }}">{{ task_template.name }}</option>
+       {% endfor %}
+      </select>
+     </p>
+     <p id="tasktemplate"></p>
+     <p><input type="submit" value="Create"/></p>
+     </form>
+    </div>
+  </div>
+<script>
+$('#tasktemplate_dropdown').change(function() {
+  $.ajax({
+    url: '/tasktemplate/1',
+    success: function(data) {
+       $('#tasktemplate').html(data);
+    }
+  });
+});
+$(document).ready(function() { 
+  $('#task_new').ajaxForm(function() { 
+    // Change to dialog
+    alert("Thank you for your comment!"); 
+  }); 
+}); 
+  </script>
