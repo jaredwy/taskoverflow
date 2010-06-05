@@ -1,11 +1,15 @@
 # Create your views here.
+import logging
+
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from datetime import tzinfo, timedelta, datetime, date
 from django.template import RequestContext
 from django.shortcuts import get_object_or_404, render_to_response
+
 import models
 import dataLayer
+
 def task_view(request, task_id):
     return render_to_response('task_view.html', {},
                                context_instance=RequestContext(request))
@@ -13,6 +17,8 @@ def task_view(request, task_id):
 def task_new(request):
     data = dataLayer.DataLayer()
     templates = data.GetTaskTypes()
+    logging.info(templates)
+    templates = [{'name': 'Language Translation'}, {'name': 'Map Fix'}]
     return render_to_response('task_new.html', {'task_templates': templates},
                                context_instance=RequestContext(request))
 

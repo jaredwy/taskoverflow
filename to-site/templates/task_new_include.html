@@ -12,7 +12,7 @@
      </p>
      <p>
       <label for="task_template">Task Template</label>
-      <select id="tasktemplate_dropdown" name="task_template" onchange="addTemplate()">
+      <select id="tasktemplate_dropdown" name="task_template">
        {% for task_template in task_templates %}
         <option name="{{ task_template.id }}">{{ task_template.name }}</option>
        {% endfor %}
