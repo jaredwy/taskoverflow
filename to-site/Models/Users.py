@@ -8,10 +8,10 @@ class User(db.Model):
     ID = db.IntegerProperty()
     Name = db.StringProperty()
     DateOfBirth = db.DateProperty()
-    Status = 
+    UserName = db.StringProperty()
     
     
-class UserTraits:
+class UserTraits(db.Model):
     User = db.ReferenceProperty(User, collection_name='UserTraits')
     Points = db.IntegerProperty()
     Trait = TaskType()
