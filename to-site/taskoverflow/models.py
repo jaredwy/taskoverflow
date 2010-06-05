@@ -22,7 +22,7 @@ class Task(db.Model):
     ID = db.IntegerProperty()
     points = db.IntegerProperty()
     taskType = db.ReferenceProperty(TaskType)
-    taskState =  db.ReferenceProperty(taskState)
+    taskState =  db.ReferenceProperty(TaskState)
 
 class TaskMetaData(db.Expando):
     UserID = db.IntegerProperty()
