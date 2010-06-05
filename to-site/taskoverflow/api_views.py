@@ -3,6 +3,7 @@ Contains the API views for the
 """
 
 import sys
+import logging
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
@@ -39,7 +40,8 @@ class APIValidationError(APIError):
 def apigen_validate(request, instructions, errors):
     # iterate through the instructions and check to see if everything stacks up
     for fname, finst in instructions.iteritems():
-        print >> sys.stderr, "checking validity of field: %s\n" % fname,
+        logging.error("checking validity of field: %s\n" % fname)
+        
         
         # if the field is required and no data is supplied then add a validation error
         if (finst['required'] and (not request.POST.__contains__(fname))):
@@ -62,11 +64,11 @@ TODO: add login decorator
 """
 def task_update(request, key):
     if (request.method == 'POST'):
-        print >> sys.stderr, "GOT POSTED VALUES\n",
+        logging.info("Got posted values")
     
 
     for k, v in request.POST.iteritems():
-        print >> sys.stderr, "%(key)s: %(value)s\n" % {'key': k, 'value': v},
+        logging.info("%(key)s: %(value)s\n" % {'key': k, 'value': v})
 
     return HttpResponse("TASK UPDATE API")
     

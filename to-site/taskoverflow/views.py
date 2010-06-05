@@ -4,14 +4,21 @@ from django.contrib.auth.decorators import login_required
 from datetime import tzinfo, timedelta, datetime, date
 from django.template import RequestContext
 from django.shortcuts import get_object_or_404, render_to_response
-import models
+import forms
 import dataLayer
+
+
+
 def task_view(request, task_id):
     return render_to_response('task_view.html', {},
                                context_instance=RequestContext(request))
     
 def task_new(request):
     data = dataLayer.DataLayer()
+    if request.method == 'POST':
+        #TODO: data validation
+        data = TaskForm(data=self.request.POST)
+
     templates = data.GetTaskTypes()
     return render_to_response('task_new.html', {'task_templates': templates},
                                context_instance=RequestContext(request))
