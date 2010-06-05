@@ -5,13 +5,15 @@ from datetime import tzinfo, timedelta, datetime, date
 from django.template import RequestContext
 from django.shortcuts import get_object_or_404, render_to_response
 import models
+import dataLayer
 def task_view(request, task_id):
     return render_to_response('task_view.html', {},
                                context_instance=RequestContext(request))
     
 def task_new(request):
-    task_templates = [{'id': 'languagetranslate', 'name': 'Language Translation'}]
-    return render_to_response('task_new.html', {'task_templates': task_templates},
+    data = dataLayer.DataLayer()
+    templates = data.GetTaskTypes()
+    return render_to_response('task_new.html', {'task_templates': templates},
                                context_instance=RequestContext(request))
 
 def tasks_search(request): 
@@ -42,9 +44,6 @@ def create_data(request):
     
     create.CreateUserInfo(users)
     return HttpResponse("created user")
-
-
-
 
 class DataCreater():
     #user creators
