@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from datetime import tzinfo, timedelta, datetime, date
 from django.template import RequestContext
 from django.shortcuts import get_object_or_404, render_to_response
+from django.utils import simplejson
 
 import models
 import dataLayer
@@ -17,21 +18,13 @@ def task_view(request, task_id):
 def task_new(request):
     data = dataLayer.DataLayer()
     templates = data.GetTaskTypes()
-    logging.info(templates)
-    templates = [{'name': 'Language Translation'}, {'name': 'Map Fix'}]
     return render_to_response('task_new.html', {'task_templates': templates},
                                context_instance=RequestContext(request))
 
-def tasktemplate(request, tasktemplate_id):
-    task_fields =  [
-     {"label": "From",
-      "name": "fromlanguage",
-      "value": "",
-      "type": "input"},
-     {"label": "To",
-      "name": "tolanguage",
-      "value": ["spanish", "english"],
-      "type": "dropdown"},]
+def tasktemplate(request, tasktemplate_key):
+    data = dataLayer.DataLayer()
+    template = data.GetTaskTemplate(tasktemplate_key)
+    task_fields = simplejson.loads(template)
     return render_to_response('taskfield_include.html', {'task_fields': task_fields},
                                context_instance=RequestContext(request))
  
@@ -45,6 +38,7 @@ def tasks_recent(request):
     # Render into recent tasks widget
     data = dataLayer.DataLayer()
     tasks = data.GetTasks()
+    logging.info(tasks)
     return render_to_response('tasks_recent.html', {'tasks': tasks},
                                context_instance=RequestContext(request))
     
@@ -101,25 +95,43 @@ class DataCreater():
         traitb.put()
         return traita,traitb
         
-    def CreateTaskType(self,template):
+    def CreateTaskType(self,templates):
         taskTypea = models.TaskType()
         taskTypea.name = "Translate"
         taskTypea.value = "Spanish.English"
-        taskTypea.TaskTemplate = template[0]
+        taskTypea.TaskTemplate = templates[0]
         
         taskTypeb = models.TaskType()
         taskTypeb.name = "Mapping"
         taskTypeb.value = "Find.Road"
-        taskTypeb.TaskTemplate = template[1]
+        taskTypeb.TaskTemplate = templates[1]
         taskTypeb.put()
         taskTypea.put()
         return taskTypea,taskTypeb
         
     def CreateTaskTemplates(self):
         templatea = models.TaskTemplate()
-        templatea.template = '{"template":[{"translate":"","somethingelse":""}]}'
+        templatea_fields = [
+         {"label": "From",
+          "name": "fromlanguage",
+          "value": "",
+          "type": "input"},
+         {"label": "To",
+          "name": "tolanguage",
+          "value": ["spanish", "english"]
+          }];
+        templatea.template = simplejson.dumps(templatea_fields)
         templateb = models.TaskTemplate()
-        templateb.template = '{"template":[{"map":"Tenth road"}]}'
+        templateb_fields = [
+         {"label": "Where",
+          "name": "fromlanguage",
+          "value": "",
+          "type": "input"},
+         {"label": "To",
+          "name": "tolanguage",
+          "value": ["spanish", "english"]
+          }];
+        templateb.template = simplejson.dumps(templateb_fields)
         templatea.put()
         templateb.put()
         return templatea, templateb
