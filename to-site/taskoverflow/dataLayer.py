@@ -26,6 +26,11 @@ class DataLayer():
     def GetTaskTypes(self):
         types = models.TaskType().all().fetch(1000)
         return types
+    
+    def GetTaskTemplate(self, template_key):
+        #TODO: memcache
+        types = models.TaskType().get(template_key)
+        return types   
         
     #@memoize('tasks')   
     def GetTasks(self):
