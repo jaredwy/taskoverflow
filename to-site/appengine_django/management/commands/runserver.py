@@ -65,7 +65,6 @@ def start_dev_appserver():
   args.extend(["--datastore_path", p[0], "--history_path", p[1]])
 
   # Append the current working directory to the arguments.
-  args.extend(["--address", "0.0.0.0"])
   dev_appserver_main.main([progname] + args + [os.getcwdu()])
 
 
