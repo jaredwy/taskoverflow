@@ -19,6 +19,9 @@ urlpatterns = patterns('',
     # (r'^foo/', include('foo.urls')),
     (r'^task/new/$', 'taskoverflow.views.task_new'),
     (r'^task/(?P<task_id>\d+)/$', 'taskoverflow.views.task_view'),
+    # Tasks stuff
+    (r'^tasks/search*', 'taskoverflow.views.tasks_search'),
+    (r'^tasks/recent*', 'taskoverflow.views.tasks_recent'),
     # User stuff
     (r'^user/(?P<user_id>\d+)/$', 'taskoverflow.views.user_view'),
     # Uncomment this for admin:
