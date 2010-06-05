@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required
 def task_view(request, task_id):
     return HttpResponse("Viewing task")
     
-@login_required
-def task_new(request, task_id):
-    return HttpResponse("Creating Views")
+def task_new(request):
+    return HttpResponse("Creating task")
+    
+def user_view(request, user_id):
+    return HttpResponse("Showing user")

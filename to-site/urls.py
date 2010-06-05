@@ -20,7 +20,7 @@ urlpatterns = patterns('',
     (r'^task/new/$', 'taskoverflow.views.task_new'),
     (r'^task/(?P<task_id>\d+)/$', 'taskoverflow.views.task_view'),
     # User stuff
-    (r'^user/(?P<user_id>\d+)/$', 'taskoverflow.views.user_view')
+    (r'^user/(?P<user_id>\d+)/$', 'taskoverflow.views.user_view'),
     # Uncomment this for admin:
 #     (r'^admin/', include('django.contrib.admin.urls')),
 )
