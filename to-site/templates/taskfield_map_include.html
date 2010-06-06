@@ -19,6 +19,8 @@ function showAddress() {
       var marker = new google.maps.Marker({position: position});
       marker.setMap(map);
       map.setCenter(position);
+      var positionSer = position.lat() + ',' + position.lng();
+      $('input[name="task_location"]').val(positionSer);
     } else {
       alert("Address not found");
     }

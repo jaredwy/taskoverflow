@@ -55,7 +55,7 @@ $('select[name="task_template"]').trigger('change');
 $(document).ready(function() { 
   $('#task_new').ajaxForm(function() { 
     // Change to dialog
-    alert("Thank you for your comment!"); 
+    alert("Task created!"); 
   }); 
   $('input[name="task_expiration"]').datepicker();
   $("input:submit").button();
@@ -78,31 +78,5 @@ $(document).ready(function() {
   $('input[name="task_estimatedtime"]').val($('#estimatedtime_slider').slider('value'));
 }); 
 
-google.load('maps', '3', {
- other_params: 'sensor=false'
-});
 
-var map;
-
-function showAddress(address) {
-  var geocoder = new google.maps.Geocoder();
-  geocoder.geocode( { 'address': address}, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      var result = results[0];
-      position = results[0].geometry.location;
-      var marker = new google.maps.Marker({position: position});
-      marker.setMap(map);
-    } else {
-      alert("Address not found");
-    }
-  });
-}
-
-function makeMap() {
-  var center = new google.maps.LatLng(39.91, 116.38);
-  map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 3,
-        center: center,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-  });
-}  </script>
+</script>

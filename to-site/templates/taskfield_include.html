@@ -12,8 +12,8 @@
     </select>
    {% endifequal %}
    {% ifequal task_field.type "input" %}
-    <input class="indent" type="hidden" name="{{task_field.name}}">
-    <input type="text" id="address" value="">
+    <input class="indent" type="hidden" name="task_location">
+    <input type="text" id="address" name="{{task_field.name}} value="">
     <input type="button" value="Locate" onclick="showAddress()">
     {% include 'taskfield_map_include.html' %}
   {% endifequal %}
