@@ -12,10 +12,15 @@
 		<label for="task_template">Task Type</label>
 	    <select id="tasktemplate_dropdown" name="task_template">
 	       {% for task_type in task_types %}
-	        <option value="{{ task_type.key.id }}">{{ task_type.name }}</option>
+	        <option value="{{ task_type.TaskTemplate.key.id }}">{{ task_type.name }}</option>
 	       {% endfor %}
 	      </select>
-	</p>	
+	</p>
+	<p>
+		<div id="tasktemplate">	
+		</div>
+	</p>
+	  <input class="indent" type="submit" value="Create">
 	<form>
    </div>
  </div>
@@ -31,9 +36,10 @@ $('#tasktemplate_dropdown').change(function() {
   });
 });
 $(document).ready(function() { 
-  $('#task_new').ajaxForm(function() { 
+	$("input:submit").button();
+  	$('#task_new').ajaxForm(function() { 
     // Change to dialog
-    alert("Thank you for your comment!"); 
+    	alert("Thank you for your comment!"); 
   }); 
 }); 
   </script>

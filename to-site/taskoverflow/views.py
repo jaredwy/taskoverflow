@@ -66,7 +66,8 @@ def create_data(request):
     templates = create.CreateTaskTemplates()
     taskTypes = create.CreateTaskType(templates)
     traits = create.CreateUserTraits(taskTypes,users)
-    tasks= create.CreateTasks(taskTypes)
+    task_meta_data = create.CreateMetaData()
+    tasks= create.CreateTasks(taskTypes,task_meta_data)
     return HttpResponse("created user")
 
 def delete_data(request):
@@ -77,7 +78,6 @@ def delete_data(request):
     
 class DataCreater():
     #user creators
-    
     def DeleteAll(self):
         query = models.User.all()
         entries =query.fetch(1000)
@@ -96,6 +96,14 @@ class DataCreater():
         db.delete(entries)
         
         
+    def CreateMetaData(self):
+       data = models.TaskMetaData()
+       data.from_language = "Spanish"
+       data.to_langauge = "English"
+       data.put()
+       return data
+       
+       
     def CreateUsers(self):
         usera = models.User()
         userb = models.User()
@@ -115,14 +123,15 @@ class DataCreater():
         for user in users:
             print user.Name
             
-    def CreateTasks(self,types):
+    def CreateTasks(self,types,task_meta_data):
         taska = models.Task()
         taska.title = "Dig a hole"
         taska.description = "It must be 10 feet by 10 feet and be awesome."
         taska.expiration = datetime.today() + timedelta(days=3)
         taska.estimated_time = 3
         taska.points = 10
-        taska.task_type = types[0]
+        taska.taskType = types[0]
+        taska.task_meta_data = task_meta_data
         taska.put()
         return taska.key().id()
      
@@ -164,11 +173,15 @@ class DataCreater():
         templatea.template = simplejson.dumps(templatea_fields)
         templateb = models.TaskTemplate()
         templateb_fields = [
-         {"label": "Location",
-          "name": "location",
-          "value": "",
-          "type": "input"}
-          ];
+        {"label": "From",
+          "name": "fromlanguage",
+          "value": ["Spanish", "English", "Portuguese"],
+          "type": "dropdown"},
+         {"label": "To",
+          "name": "tolanguage",
+          "value": ["Spanish", "English", "Portuguese"],
+          "type": "dropdown"
+          }];
         templateb.template = simplejson.dumps(templateb_fields)
         templatea.put()
         templateb.put()
