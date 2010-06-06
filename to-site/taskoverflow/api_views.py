@@ -31,7 +31,10 @@ def is_datetime(value):
     # search_results = re.search("(\d{4}\-\d{2}\-\d{2})\s?(\d{2}\:\d{2}:\d{0,2})")
     
     # check the results
-    date_value = datetime.datetime.strptime(value, '%Y-%m-%d %H:%M:%S')
+    try:
+        date_value = datetime.datetime.strptime(value, '%Y-%m-%d %H:%M:%S')
+    except ValueError, err:
+        raise ValidateError("Invalid date format")
 
     return date_value
         
