@@ -48,6 +48,7 @@ class DataLayer():
     #@memoize('tasks')   
     def GetTask(self, task_id):
         tasks = models.Task().get_by_id(task_id)
+        logging.info(tasks)
         return tasks
     
     #@memoize('tasks')   

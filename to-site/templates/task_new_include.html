@@ -77,4 +77,32 @@ $(document).ready(function() {
    });
   $('input[name="task_estimatedtime"]').val($('#estimatedtime_slider').slider('value'));
 }); 
-  </script>
+
+google.load('maps', '3', {
+ other_params: 'sensor=false'
+});
+
+var map;
+
+function showAddress(address) {
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      var result = results[0];
+      position = results[0].geometry.location;
+      var marker = new google.maps.Marker({position: position});
+      marker.setMap(map);
+    } else {
+      alert("Address not found");
+    }
+  });
+}
+
+function makeMap() {
+  var center = new google.maps.LatLng(39.91, 116.38);
+  map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 3,
+        center: center,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+}  </script>

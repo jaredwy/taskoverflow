@@ -15,7 +15,9 @@ import dataLayer
 
 def task_view(request, task_id):
     data = dataLayer.DataLayer()
+    logging.info("this is a task id" + task_id)
     task = data.GetTask(int(task_id))
+    logging.info(task)
     task_type = task.type.name
     metadata = []
     labels = data.GetMetadataLabels()
@@ -133,10 +135,10 @@ class DataCreater():
         taska.expiration = datetime.today() + timedelta(days=3)
         taska.estimated_time = 3
         taska.points = 10
+        taska.location = "-33.838,151.120"
         taska.type = types[0]
         taska.metadata = task_meta_data
         taska.put()
-        return taska.key().id()
      
     def CreateUserTraits(self,type,users):
         users[0].put()
@@ -176,15 +178,10 @@ class DataCreater():
         templatea.template = simplejson.dumps(templatea_fields)
         templateb = models.TaskTemplate()
         templateb_fields = [
-        {"label": "From",
-          "name": "fromlanguage",
-          "value": ["Spanish", "English", "Portuguese"],
-          "type": "dropdown"},
-         {"label": "To",
-          "name": "tolanguage",
-          "value": ["Spanish", "English", "Portuguese"],
-          "type": "dropdown"
-          }];
+        {"label": "Location",
+          "name": "location",
+          "value": "",
+          "type": "input"}];
         templateb.template = simplejson.dumps(templateb_fields)
         templatea.put()
         templateb.put()
