@@ -29,6 +29,7 @@ urlpatterns = patterns('',
     # Uncomment this for admin:
 #     (r'^admin/', include('django.contrib.admin.urls')),
     (r'^api/', include('taskoverflow.api_urls')),
+    (r'^publish/', include('taskoverflow.api_publish_urls')),
     # reference the api urls
     
 )
