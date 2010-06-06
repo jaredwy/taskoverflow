@@ -9,7 +9,7 @@
    </p>
    <p>
      <span class="label">Expiration</span>
-     <span class="indent">{{task.expiration}}</span>
+     <span class="indent">{{task.expiration|date:"D d M Y"}}</span>
    </p>
    <p>
      <span class="label">Points</span>
@@ -21,11 +21,13 @@
    </p>
    <p>
      <span class="label">Type</span>
-     <span class="indent">{{task.task_type.name}}</span>
+     <span class="indent">{{task_type}}</span>
    </p>
    {% for data in metadata %}
-     <span class="label">{{ metadata.name }}</span>
-     <span class="indent">{{ metadata.value }}</span>
+   <p>
+     <span class="label">{{ data.name }}</span>
+     <span class="indent">{{ data.value }}</span>
+   </p>
    {% endfor %}
    
 </div>
