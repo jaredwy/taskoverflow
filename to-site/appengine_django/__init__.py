@@ -134,6 +134,7 @@ def LoadSdk():
         os.path.join(SDK_PATH, 'lib', 'yaml', 'lib'),
         # added site lib path to the path
         os.path.join(PARENT_DIR, 'lib'),
+		os.path.join(PARENT_DIR, 'lib', 'publishing'),
     ]
     logging.info(SDK_PATH)
     # Add SDK paths at the start of sys.path, but after the local directory which
