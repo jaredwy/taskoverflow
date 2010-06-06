@@ -23,14 +23,11 @@ def task_new(request):
     logging.info(templates)
     return render_to_response('task_new.html', {'task_types': templates},
                                context_instance=RequestContext(request))
-
-
-
+                               
+                               
 def tasktemplate(request, tasktemplate_id):
     data = dataLayer.DataLayer()
-    logging.info(tasktemplate_id)
     template = data.GetTaskTemplate(int(tasktemplate_id))
-    logging.info(template.template)
     task_fields = simplejson.loads(template.template)
     return render_to_response('taskfield_include.html', {'task_fields': task_fields},
                                context_instance=RequestContext(request))
@@ -64,8 +61,7 @@ def create_data(request):
     templates = create.CreateTaskTemplates()
     taskTypes = create.CreateTaskType(templates)
     traits = create.CreateUserTraits(taskTypes,users)
-    logging.info("Created a task with id" + str(create.CreateTasks(taskTypes)))
-    #create.CreateUserInfo(users)
+    tasks= create.CreateTasks(taskTypes)
     return HttpResponse("created user")
 
 class DataCreater():
