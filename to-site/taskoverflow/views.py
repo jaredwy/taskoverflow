@@ -131,11 +131,15 @@ class DataCreater():
         templatea.template = simplejson.dumps(templatea_fields)
         templateb = models.TaskTemplate()
         templateb_fields = [
-         {"label": "Location",
-          "name": "location",
-          "value": "",
-          "type": "input"}
-          ];
+        {"label": "From",
+          "name": "fromlanguage",
+          "value": ["Spanish", "English", "Portuguese"],
+          "type": "dropdown"},
+         {"label": "To",
+          "name": "tolanguage",
+          "value": ["Spanish", "English", "Portuguese"],
+          "type": "dropdown"
+          }];
         templateb.template = simplejson.dumps(templateb_fields)
         templatea.put()
         templateb.put()
