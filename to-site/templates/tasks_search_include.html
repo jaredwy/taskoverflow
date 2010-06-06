@@ -32,15 +32,14 @@ $('#tasktemplate_dropdown').change(function() {
     url: '/tasktemplate/' + $('#tasktemplate_dropdown').val(),
     success: function(data) {
        $('#tasktemplate').html(data);
-
     }
   });
 });
 $(document).ready(function() { 
 	$("input:submit").button();
-  $('#task_new').ajaxForm(function() { 
+  	$('#task_new').ajaxForm(function() { 
     // Change to dialog
-    alert("Thank you for your comment!"); 
+    	alert("Thank you for your comment!"); 
   }); 
 }); 
   </script>
