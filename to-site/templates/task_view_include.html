@@ -26,4 +26,29 @@
      <span class="indent">{{ data.value }}</span>
    </p>
    {% endfor %}
+	<div class="indent" id="map" style="width:300px; height: 200px"></div>
 </div>
+
+
+
+<script>
+google.load('maps', '3', {
+ other_params: 'sensor=false',
+ callback: 'makeMap'
+});
+
+function makeMap() {
+  if({{task.location}}) {
+  	var center = new google.maps.LatLng({{task.location.lat}}, {{task.location.lon}});
+	  map = new google.maps.Map(document.getElementById('map'), {
+	        zoom: 5,
+	        center: center,
+	        mapTypeId: google.maps.MapTypeId.ROADMAP
+	  });
+	marker = new google.maps.Marker({position: center , map:map})
+   }
+
+}  
+
+
+</script>
