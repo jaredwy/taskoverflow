@@ -25,10 +25,10 @@ class Task(db.Model):
     expiration = db.DateTimeProperty()
     points = db.IntegerProperty()
     estimated_time = db.IntegerProperty() # hours
-    task_type = db.ReferenceProperty(TaskType)
+    type = db.ReferenceProperty(TaskType)
     completed = db.DateTimeProperty(auto_now_add=True)
-    task_state =  db.ReferenceProperty(TaskState)
-    task_meta_data = db.ReferenceProperty(TaskMetaData)
+    state =  db.ReferenceProperty(TaskState)
+    metadata = db.ReferenceProperty(TaskMetaData)
 
 
 class User(db.Model):

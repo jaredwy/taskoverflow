@@ -27,7 +27,13 @@ class DataLayer():
         types = models.TaskType().all().fetch(1000)
         return types
     
-    
+    def GetMetadataLabels(self):
+        # TODO - replace with datastore later?
+        labels = {'from_language': 'From',
+                  'to_language': 'To',
+                  'location': 'Location'}
+        return labels
+        
     def GetTaskTemplate(self, tasktype_id):
         task = models.TaskType().get_by_id(tasktype_id)
         return task.TaskTemplate.template 
@@ -59,13 +65,14 @@ class DataLayer():
     def GetTaskTemplate(self,templateid):
         return models.TaskTemplate().get_by_id(templateid)
        
-    def CreateTask(self,title,expiration,estimatedTime,taskType,points=0):
+    def CreateTask(self,title,expiration,estimatedTime,description='',taskType,points=0):
         task = models.Task()
         task.title = title
         task.expiration = expiration
         task.estimatedTime = estimatedTime
         task.points = points
-        task.TaskType = GetTaskType(taskType)
+        task.description = description
+        task.TaskType = self.GetTaskType(taskType)
         task.put()
         return task.key().id()
         

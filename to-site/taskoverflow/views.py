@@ -16,10 +16,14 @@ import dataLayer
 def task_view(request, task_id):
     data = dataLayer.DataLayer()
     task = data.GetTask(int(task_id))
-    task_type = task.task_type.name
+    task_type = task.type.name
     metadata = []
-    for task_property in task.dynamic_properties():
-      metadata.append({'name': task_property, 'value': task.__getattr__(task_property)})
+    labels = data.GetMetadataLabels()
+    for task_property in task.metadata.dynamic_properties():
+      metadata.append({'name': task_property, 
+                       'value': task.metadata.__getattr__(task_property),
+                       'label': labels.get(task_property, task_property)})
+    logging.info(metadata);
     return render_to_response('task_view.html', {'task_type': task_type, 'task': task, 'metadata': metadata},
                                context_instance=RequestContext(request))
     
@@ -66,7 +70,7 @@ def create_data(request):
     taskTypes = create.CreateTaskType(templates)
     traits = create.CreateUserTraits(taskTypes,users)
     task_meta_data = create.CreateMetaData()
-    tasks= create.CreateTasks(taskTypes,task_meta_data)
+    tasks = create.CreateTasks(taskTypes, task_meta_data)
     return HttpResponse("created user")
 
 def delete_data(request):
@@ -98,7 +102,7 @@ class DataCreater():
     def CreateMetaData(self):
        data = models.TaskMetaData()
        data.from_language = "Spanish"
-       data.to_langauge = "English"
+       data.to_language = "English"
        data.put()
        return data
        
@@ -122,15 +126,15 @@ class DataCreater():
         for user in users:
             print user.Name
             
-    def CreateTasks(self,types,task_meta_data):
+    def CreateTasks(self, types, task_meta_data):
         taska = models.Task()
         taska.title = "Dig a hole"
         taska.description = "It must be 10 feet by 10 feet and be awesome."
         taska.expiration = datetime.today() + timedelta(days=3)
         taska.estimated_time = 3
         taska.points = 10
-        taska.taskType = types[0]
-        taska.task_meta_data = task_meta_data
+        taska.type = types[0]
+        taska.metadata = task_meta_data
         taska.put()
         return taska.key().id()
      
