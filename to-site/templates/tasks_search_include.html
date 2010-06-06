@@ -1,1 +1,39 @@
-Searching Tasks!
+<div class="ui-widget-content ui-corner-all">
+ <h1 class="ui-widget-header ui-corner-all">Search Tasks</h1>
+  <div>
+    <form id="task_search" action="/api/tasks/search" method="post"> 
+	<p>
+		<label for="name">Name</label><input type="text/submit/hidden/button" name="name" value="" id="name">
+	</p>
+	<p>
+		<label for="description">Description</label><input type="text/submit/hidden/button" name="description" value="" id="description">
+	</p>
+	<p>
+		<label for="task_template">Task Type</label>
+	    <select id="tasktemplate_dropdown" name="task_template">
+	       {% for task_type in task_types %}
+	        <option value="{{ task_type.key.id }}">{{ task_type.name }}</option>
+	       {% endfor %}
+	      </select>
+	</p>	
+	<form>
+   </div>
+ </div>
+
+
+<script>
+$('#tasktemplate_dropdown').change(function() {
+  $.ajax({
+    url: '/tasktemplate/' + $('#tasktemplate_dropdown').val(),
+    success: function(data) {
+       $('#tasktemplate').html(data);
+    }
+  });
+});
+$(document).ready(function() { 
+  $('#task_new').ajaxForm(function() { 
+    // Change to dialog
+    alert("Thank you for your comment!"); 
+  }); 
+}); 
+  </script>
