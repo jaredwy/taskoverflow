@@ -32,7 +32,9 @@ def is_datetime(value):
     
     # check the results
     try:
-        date_value = datetime.datetime.strptime(value, '%Y-%m-%d %H:%M:%S')
+        # TODO: fix this so it works in a more internationalized way
+        date_value = datetime.datetime.strptime(value, '%m-%d-%Y')
+        # date_value = datetime.datetime.strptime(value, '%Y-%m-%d %H:%M:%S')
     except ValueError, err:
         raise ValidateError("Invalid date format")
 
@@ -160,14 +162,18 @@ def task_create(request):
     else:
         # create the new task
         dl = DataLayer()
-        dl.CreateTask(
-            title = field_values['task_name'],
-            expiration = field_values['task_expiration'],
-            estimatedTime = field_values['task_estimatedtime'],
-            taskType = field_values['task_template'],
-            points = field_values['task_points'])
+        api_response = {
+            'message': 'Sucessfully created task',
+            'id': dl.CreateTask(
+                    title = field_values['task_name'],
+                    expiration = field_values['task_expiration'],
+                    estimatedTime = field_values['task_estimatedtime'],
+                    taskType = field_values['task_template'],
+                    points = field_values['task_points'],
+                    description = field_values['task_description'])
+        }
             
-        return HttpResponse("ALL OK")
+        return HttpResponse(demjson.encode(api_response))
         
 def task_get(request, id):
     # get the datalasy
