@@ -1,645 +1,80 @@
-
-  
-  
-
-  
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <title>to-site/templates/task_new_include.html at 7904daf289a3ab52b34ebec4f1c643853a197913 from jaredwy's taskoverflow - GitHub</title>
-    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub" />
-    <link rel="fluid-icon" href="http://github.com/fluidicon.png" title="GitHub" />
-
-    <link href="http://assets3.github.com/stylesheets/bundle_common.css?53081acd2dd130cebd1da08f5aa8f7897bb3ae9e" media="screen" rel="stylesheet" type="text/css" />
-<link href="http://assets2.github.com/stylesheets/bundle_github.css?53081acd2dd130cebd1da08f5aa8f7897bb3ae9e" media="screen" rel="stylesheet" type="text/css" />
-
-    <script type="text/javascript" charset="utf-8">
-      var GitHub = {}
-      var github_user = 'nathanoehlman'
-      
-    </script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
-    <script src="http://assets1.github.com/javascripts/bundle_common.js?53081acd2dd130cebd1da08f5aa8f7897bb3ae9e" type="text/javascript"></script>
-<script src="http://assets1.github.com/javascripts/bundle_github.js?53081acd2dd130cebd1da08f5aa8f7897bb3ae9e" type="text/javascript"></script>
-
-        <script type="text/javascript" charset="utf-8">
-      GitHub.spy({
-        repo: "jaredwy/taskoverflow"
-      })
-    </script>
-
-    
-  
-    
-  
-
-  <link href="http://github.com/jaredwy/taskoverflow/commits/7904daf289a3ab52b34ebec4f1c643853a197913.atom" rel="alternate" title="Recent Commits to taskoverflow:7904daf289a3ab52b34ebec4f1c643853a197913" type="application/atom+xml" />
-
-    <META NAME="ROBOTS" CONTENT="NOINDEX, FOLLOW">    <meta name="description" content="RHOK project for task turking " />
-    <script type="text/javascript">
-      GitHub.nameWithOwner = GitHub.nameWithOwner || "jaredwy/taskoverflow";
-      GitHub.currentRef = "";
-    </script>
-  
-
-            <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-3769691-2']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script');
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        ga.setAttribute('async', 'true');
-        document.documentElement.firstChild.appendChild(ga);
-      })();
-    </script>
-
-  </head>
-
-  
-
-  <body>
-    
-
-    
-      <script type="text/javascript">
-        var _kmq = _kmq || [];
-        (function(){function _kms(u,d){if(navigator.appName.indexOf("Microsoft")==0 && d)document.write("<scr"+"ipt defer='defer' async='true' src='"+u+"'></scr"+"ipt>");else{var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src=u;(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(s);}}_kms('https://i.kissmetrics.com/i.js');_kms('http'+('https:'==document.location.protocol ? 's://s3.amazonaws.com/' : '://')+'scripts.kissmetrics.com/406e8bf3a2b8846ead55afb3cfaf6664523e3a54.1.js',1);})();
-      </script>
-    
-
-    
-
-    
-
-    <div class="subnavd" id="main">
-      <div id="header" class="pageheaded">
-        <div class="site">
-          <div class="logo">
-            <a href="https://github.com/"><img src="/images/modules/header/logov3.png" alt="github" /></a>
-          </div>
-          
-            
-
-
-
-
-
-
-  
-    <div class="userbox">
-      <div class="inner">
-        <div class="avatarname">
-          <a href="http://github.com/nathanoehlman"><img src="https://secure.gravatar.com/avatar/9ede9ec0e0b5137df664d02463556a88?s=140&d=https%3A%2F%2Fgithub.com%2Fimages%2Fgravatars%2Fgravatar-140.png" alt="" width="20" height="20"  /></a>
-          <a href="http://github.com/nathanoehlman" class="name">nathanoehlman</a>
-
-          
-          
-        </div>
-        <ul class="usernav">
-          <li><a href="https://github.com/">Dashboard</a></li>
-          <li>
-            
-            <a href="https://github.com/inbox">Inbox</a>
-            <a href="https://github.com/inbox" class="unread_count ">0</a>
-          </li>
-          <li><a href="https://github.com/account">Account Settings</a></li>
-                    <li><a href="/logout">Log Out</a></li>
-        </ul>
-      </div>
-    </div><!-- /.userbox -->
-  
-
-
-          
-          <div class="topsearch">
-  
-    <form action="/search" id="top_search_form" method="get">
-      <a href="/search" class="advanced-search tooltipped downwards" title="Advanced Search">Advanced Search</a>
-      <input type="search" class="search my_repos_autocompleter" name="q" results="5" placeholder="Search&hellip;" /> <input type="submit" value="Search" class="button" />
-      <input type="hidden" name="type" value="Everything" />
-      <input type="hidden" name="repo" value="" />
-      <input type="hidden" name="langOverride" value="" />
-      <input type="hidden" name="start_value" value="1" />
-    </form>
-  
-  
-    <ul class="nav">
-      <li><a href="/explore">Explore GitHub</a></li>
-      <li><a href="http://gist.github.com">Gist</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="http://help.github.com">Help</a></li>
-    </ul>
-  
-</div>
-
-        </div>
-      </div>
-
-      
-      
-        
-    <div class="site">
-      <div class="pagehead repohead vis-public   ">
-        <h1>
-          <a href="/jaredwy">jaredwy</a> / <strong><a href="http://github.com/jaredwy/taskoverflow">taskoverflow</a></strong>
-          
-          
-        </h1>
-
-        
-    <ul class="actions">
-      
-
-      
-        <li class="for-owner" style="display:none"><a href="https://github.com/jaredwy/taskoverflow/edit" class="minibutton btn-admin "><span><span class="icon"></span>Admin</span></a></li>
-        <li>
-          <a href="/jaredwy/taskoverflow/toggle_watch" class="minibutton btn-watch " id="watch_button" style="display:none"><span><span class="icon"></span>Watch</span></a>
-          <a href="/jaredwy/taskoverflow/toggle_watch" class="minibutton btn-watch " id="unwatch_button" style="display:none"><span><span class="icon"></span>Unwatch</span></a>
-        </li>
-        
-          
-            <li class="for-notforked" style="display:none"><a href="/jaredwy/taskoverflow/fork" class="minibutton btn-fork " id="fork_button" onclick="var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', 'f92aeecdc652c42088776cbaf36821d80bf096cb'); f.appendChild(s);f.submit();return false;"><span><span class="icon"></span>Fork</span></a></li>
-            <li class="for-hasfork" style="display:none"><a href="#" class="minibutton btn-fork " id="your_fork_button"><span><span class="icon"></span>Your Fork</span></a></li>
-          
-
-          
-          <li id="pull_request_item" class='ospr' style="display:none"><a href="/jaredwy/taskoverflow/pull_request/" class="minibutton btn-pull-request "><span><span class="icon"></span>Pull Request</span></a></li>
-          
-
-          <li><a href="#" class="minibutton btn-download " id="download_button"><span><span class="icon"></span>Download Source</span></a></li>
-        
-      
-      
-      <li class="repostats">
-        <ul class="repo-stats">
-          <li class="watchers"><a href="/jaredwy/taskoverflow/watchers" title="Watchers" class="tooltipped downwards">4</a></li>
-          <li class="forks"><a href="/jaredwy/taskoverflow/network" title="Forks" class="tooltipped downwards">1</a></li>
-        </ul>
-      </li>
-    </ul>
-
-
-        
-  <ul class="tabs">
-    <li><a href="http://github.com/jaredwy/taskoverflow/tree/" class="selected" highlight="repo_source">Source</a></li>
-    <li><a href="http://github.com/jaredwy/taskoverflow/commits/" highlight="repo_commits">Commits</a></li>
-
-    
-    <li><a href="/jaredwy/taskoverflow/network" highlight="repo_network">Network (1)</a></li>
-
-    
-      <li><a href="/jaredwy/taskoverflow/forkqueue" highlight="repo_fork_queue">Fork Queue</a></li>
-    
-
-    
-      
-      <li><a href="/jaredwy/taskoverflow/issues" highlight="issues">Issues (0)</a></li>
-    
-
-    
-      
-      <li><a href="/jaredwy/taskoverflow/downloads">Downloads (0)</a></li>
-    
-
-    
-      
-      <li><a href="http://wiki.github.com/jaredwy/taskoverflow/">Wiki (4)</a></li>
-    
-
-    <li><a href="/jaredwy/taskoverflow/graphs" highlight="repo_graphs">Graphs</a></li>
-
-    <li class="contextswitch nochoices">
-      <span class="toggle leftwards tooltipped" title="7904daf289a3ab52b34ebec4f1c643853a197913">
-        <em>Tree:</em>
-        <code>7904daf</code>
-      </span>
-    </li>
-  </ul>
-
-  <div style="display:none" id="pl-description"><p><em class="placeholder">click here to add a description</em></p></div>
-  <div style="display:none" id="pl-homepage"><p><em class="placeholder">click here to add a homepage</em></p></div>
-
-  <div class="subnav-bar">
-  
-  <ul>
-    <li>
-      <a href="#" class="dropdown">Switch Branches (2)</a>
-      <ul>
-        
-          
-          
-            <li><a href="/jaredwy/taskoverflow/blob/fixingdelete/to-site/templates/task_new_include.html" action="show">fixingdelete</a></li>
-          
-        
-          
-          
-            <li><a href="/jaredwy/taskoverflow/blob/master/to-site/templates/task_new_include.html" action="show">master</a></li>
-          
-        
-      </ul>
-    </li>
-    <li>
-      <a href="#" class="dropdown defunct">Switch Tags (0)</a>
-      
-    </li>
-    <li>
-    
-    <a href="/jaredwy/taskoverflow/branches/master" class="manage">Branch List</a>
-    
-    </li>
-  </ul>
-</div>
-
-  
-  
-  
-  
-  
-
-
-        
-    <div id="repo_details" class="metabox clearfix">
-      <div id="repo_details_loader" class="metabox-loader" style="display:none">Sending Request&hellip;</div>
-
-      
-
-      <div id="repository_description" rel="repository_description_edit">
-        
-          <p>RHOK project for task turking 
-            <span id="read_more" style="display:none">&mdash; <a href="#readme">Read more</a></span>
-          </p>
-        
-      </div>
-      <div id="repository_description_edit" style="display:none;" class="inline-edit">
-        <form action="/jaredwy/taskoverflow/edit/update" method="post"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="f92aeecdc652c42088776cbaf36821d80bf096cb" /></div>
-          <input type="hidden" name="field" value="repository_description">
-          <input type="text" class="textfield" name="value" value="RHOK project for task turking ">
-          <div class="form-actions">
-            <button class="minibutton"><span>Save</span></button> &nbsp; <a href="#" class="cancel">Cancel</a>
-          </div>
-        </form>
-      </div>
-
-      
-      <div class="repository-homepage" id="repository_homepage" rel="repository_homepage_edit">
-        <p><a href="http://wiki.rhok.org/Task_Turking" rel="nofollow">http://wiki.rhok.org/Task_Turking</a></p>
-      </div>
-      <div id="repository_homepage_edit" style="display:none;" class="inline-edit">
-        <form action="/jaredwy/taskoverflow/edit/update" method="post"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="f92aeecdc652c42088776cbaf36821d80bf096cb" /></div>
-          <input type="hidden" name="field" value="repository_homepage">
-          <input type="text" class="textfield" name="value" value="http://wiki.rhok.org/Task_Turking">
-          <div class="form-actions">
-            <button class="minibutton"><span>Save</span></button> &nbsp; <a href="#" class="cancel">Cancel</a>
-          </div>
-        </form>
-      </div>
-
-      <div class="rule "></div>
-
-      <div id="url_box" class="url-box">
-        <ul class="clone-urls">
-          
-            
-              <li id="private_clone_url"><a href="git@github.com:jaredwy/taskoverflow.git" data-permissions="Read+Write">SSH</a></li>
-            
-            <li id="http_clone_url"><a href="https://nathanoehlman@github.com/jaredwy/taskoverflow.git" data-permissions="Read+Write">HTTP</a></li>
-            <li id="public_clone_url"><a href="git://github.com/jaredwy/taskoverflow.git" data-permissions="Read-Only">Git Read-Only</a></li>
-          
-        </ul>
-        <input type="text" spellcheck="false" id="url_field" class="url-field" />
-              <span style="display:none" id="url_box_clippy"></span>
-      <span id="clippy_tooltip_url_box_clippy" class="clippy-tooltip tooltipped" title="copy to clipboard">
-      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
-              width="14"
-              height="14"
-              class="clippy"
-              id="clippy" >
-      <param name="movie" value="http://assets0.github.com/flash/clippy.swf?v5"/>
-      <param name="allowScriptAccess" value="always" />
-      <param name="quality" value="high" />
-      <param name="scale" value="noscale" />
-      <param NAME="FlashVars" value="id=url_box_clippy&amp;copied=&amp;copyto=">
-      <param name="bgcolor" value="#FFFFFF">
-      <param name="wmode" value="opaque">
-      <embed src="http://assets0.github.com/flash/clippy.swf?v5"
-             width="14"
-             height="14"
-             name="clippy"
-             quality="high"
-             allowScriptAccess="always"
-             type="application/x-shockwave-flash"
-             pluginspage="http://www.macromedia.com/go/getflashplayer"
-             FlashVars="id=url_box_clippy&amp;copied=&amp;copyto="
-             bgcolor="#FFFFFF"
-             wmode="opaque"
-      />
-      </object>
-      </span>
-
-        <p id="url_description">This URL has <strong>Read+Write</strong> access</p>
-      </div>
-    </div>
-
-
-        
-
-      </div><!-- /.pagehead -->
-
-      
-
-
-
-
-
-
-
-
-
-<script type="text/javascript">
-  GitHub.currentCommitRef = "7904daf289a3ab52b34ebec4f1c643853a197913"
-  GitHub.currentRepoOwner = "jaredwy"
-  GitHub.currentRepo = "taskoverflow"
-  GitHub.downloadRepo = '/jaredwy/taskoverflow/archives/7904daf289a3ab52b34ebec4f1c643853a197913'
-
-  
-    GitHub.hasWriteAccess = true
-    GitHub.hasAdminAccess = false
-    GitHub.watchingRepo = true
-    GitHub.ignoredRepo = false
-    GitHub.hasForkOfRepo = ""
-    GitHub.hasForked = false
-  
-
-  
-</script>
-
-
-
-
-
-
-
-
-
-
-  <div id="commit">
-    <div class="group">
-        
-  <div class="envelope commit">
-    <div class="human">
-      
-        <div class="message"><pre><a href="/jaredwy/taskoverflow/commit/7904daf289a3ab52b34ebec4f1c643853a197913">data layer changes</a> </pre></div>
-      
-
-      <div class="actor">
-        <div class="gravatar">
-          
-          <img src="http://www.gravatar.com/avatar/69067c81c4f3889f54478dbe921baee7?s=140&d=http%3A%2F%2Fgithub.com%2Fimages%2Fgravatars%2Fgravatar-140.png" alt="" width="30" height="30"  />
-        </div>
-        <div class="name"><a href="/jaredwy">jaredwy</a> <span>(author)</span></div>
-        <div class="date">
-          <abbr class="relatize" title="2010-06-05 19:51:34">Sat Jun 05 19:51:34 -0700 2010</abbr>
-        </div>
-      </div>
-
-      
-
-    </div>
-    <div class="machine">
-      <span>c</span>ommit&nbsp;&nbsp;<a href="/jaredwy/taskoverflow/commit/7904daf289a3ab52b34ebec4f1c643853a197913" hotkey="c">7904daf289a3ab52b34e</a><br />
-      <span>t</span>ree&nbsp;&nbsp;&nbsp;&nbsp;cd5b518c50fbeea55917<br />
-      
-        <span>p</span>arent&nbsp;
-        
-        <a href="/jaredwy/taskoverflow/tree/d8d6c5c7ce1f1340dd7e43bae7fb2f8ab2e74b57" hotkey="p">d8d6c5c7ce1f1340dd7e</a>
-      
-
+ <div class="ui-widget-content ui-corner-all">
+  <h1 class="ui-widget-header ui-corner-all">New Task</h1>
+   <div>
+     <form id="task_new" action="/api/task/create" method="post"> 
+     <p>
+      <label for="task_name">Name:</label>
+      <input class="indent"  type="text" name="task_name">
+     </p>
+     <p>
+      <label for="task_description">Description</label>
+      <textarea class="indent"  name="task_description"></textarea>
+     </p>
+     <p>
+       <label for="task_expiration">Expiration</label>
+       <input class="indent" type="text" name="task_expiration">
+     <p>
+     <p>
+       <label for="task_points">Points</label> 
+       <div class="indent" id="points_slider" style="width:6em; float:left"></div> 
+       <input type="text" name="task_points" readonly="true" style="margin-left: 10px; width: 30px"/> 
+     </p>
+     <p>
+       <label for="task_estimatedtime">Estimated Time</label> 
+       <div class="indent" id="estimatedtime_slider" style="width:6em; float:left"></div> 
+       <input type="text" name="task_estimatedtime" readonly="true" style="margin-left: 10px; width: 30px"/> (hrs)
+     </p>
+     <p style="clear:left">
+      <label for="task_template">Type</label>
+      <select class="indent" name="task_template">
+       {% for task_type in task_types %}
+        <option value="{{ task_type.TaskTemplate.key.id }}">{{ task_type.name }}</option>
+       {% endfor %}
+      </select>
+     </p>
+     <p id="tasktemplate"></p>
+     <p>
+     <label>&nbsp;</label>
+     <input class="indent" type="submit" value="Create">
+     <p>
+     </form>
     </div>
   </div>
+<script>
 
-    </div>
-  </div>
+$('select[name="task_template"]').change(function() {
+  $.ajax({
+    url: '/tasktemplate/' + $('select[name="task_template"]').val(),
+    success: function(data) {
+       $('#tasktemplate').html(data);
+    }
+  });
+});
+$('select[name="task_template"]').trigger('change');
 
-
-
-  
-    <div id="path">
-      <b><a href="/jaredwy/taskoverflow/tree/7904daf289a3ab52b34ebec4f1c643853a197913">taskoverflow</a></b> / <a href="/jaredwy/taskoverflow/tree/7904daf289a3ab52b34ebec4f1c643853a197913/to-site">to-site</a> / <a href="/jaredwy/taskoverflow/tree/7904daf289a3ab52b34ebec4f1c643853a197913/to-site/templates">templates</a> / task_new_include.html       <span style="display:none" id="clippy_3108">to-site/templates/task_new_include.html</span>
-      
-      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
-              width="110"
-              height="14"
-              class="clippy"
-              id="clippy" >
-      <param name="movie" value="http://assets0.github.com/flash/clippy.swf?v5"/>
-      <param name="allowScriptAccess" value="always" />
-      <param name="quality" value="high" />
-      <param name="scale" value="noscale" />
-      <param NAME="FlashVars" value="id=clippy_3108&amp;copied=copied!&amp;copyto=copy to clipboard">
-      <param name="bgcolor" value="#FFFFFF">
-      <param name="wmode" value="opaque">
-      <embed src="http://assets0.github.com/flash/clippy.swf?v5"
-             width="110"
-             height="14"
-             name="clippy"
-             quality="high"
-             allowScriptAccess="always"
-             type="application/x-shockwave-flash"
-             pluginspage="http://www.macromedia.com/go/getflashplayer"
-             FlashVars="id=clippy_3108&amp;copied=copied!&amp;copyto=copy to clipboard"
-             bgcolor="#FFFFFF"
-             wmode="opaque"
-      />
-      </object>
-      
-
-    </div>
-
-    <div id="files">
-      <div class="file">
-        <div class="meta">
-          <div class="info">
-            <span class="icon"><img alt="Txt" height="16" src="http://assets1.github.com/images/icons/txt.png?53081acd2dd130cebd1da08f5aa8f7897bb3ae9e" width="16" /></span>
-            <span class="mode" title="File Mode">100644</span>
-            
-              <span>80 lines (78 sloc)</span>
-            
-            <span>2.745 kb</span>
-          </div>
-          <ul class="actions">
-            
-              <li><a id="file-edit-link" href="#" rel="/jaredwy/taskoverflow/file-edit/__ref__/to-site/templates/task_new_include.html">edit</a></li>
-            
-            <li><a href="/jaredwy/taskoverflow/raw/7904daf289a3ab52b34ebec4f1c643853a197913/to-site/templates/task_new_include.html" id="raw-url">raw</a></li>
-            
-              <li><a href="/jaredwy/taskoverflow/blame/7904daf289a3ab52b34ebec4f1c643853a197913/to-site/templates/task_new_include.html">blame</a></li>
-            
-            <li><a href="/jaredwy/taskoverflow/commits/master/to-site/templates/task_new_include.html">history</a></li>
-          </ul>
-        </div>
-        
-  <div class="data syntax type-html">
-    
-      <table cellpadding="0" cellspacing="0">
-        <tr>
-          <td>
-            <pre class="line_numbers"><span id="LID1" rel="#L1">1</span>
-<span id="LID2" rel="#L2">2</span>
-<span id="LID3" rel="#L3">3</span>
-<span id="LID4" rel="#L4">4</span>
-<span id="LID5" rel="#L5">5</span>
-<span id="LID6" rel="#L6">6</span>
-<span id="LID7" rel="#L7">7</span>
-<span id="LID8" rel="#L8">8</span>
-<span id="LID9" rel="#L9">9</span>
-<span id="LID10" rel="#L10">10</span>
-<span id="LID11" rel="#L11">11</span>
-<span id="LID12" rel="#L12">12</span>
-<span id="LID13" rel="#L13">13</span>
-<span id="LID14" rel="#L14">14</span>
-<span id="LID15" rel="#L15">15</span>
-<span id="LID16" rel="#L16">16</span>
-<span id="LID17" rel="#L17">17</span>
-<span id="LID18" rel="#L18">18</span>
-<span id="LID19" rel="#L19">19</span>
-<span id="LID20" rel="#L20">20</span>
-<span id="LID21" rel="#L21">21</span>
-<span id="LID22" rel="#L22">22</span>
-<span id="LID23" rel="#L23">23</span>
-<span id="LID24" rel="#L24">24</span>
-<span id="LID25" rel="#L25">25</span>
-<span id="LID26" rel="#L26">26</span>
-<span id="LID27" rel="#L27">27</span>
-<span id="LID28" rel="#L28">28</span>
-<span id="LID29" rel="#L29">29</span>
-<span id="LID30" rel="#L30">30</span>
-<span id="LID31" rel="#L31">31</span>
-<span id="LID32" rel="#L32">32</span>
-<span id="LID33" rel="#L33">33</span>
-<span id="LID34" rel="#L34">34</span>
-<span id="LID35" rel="#L35">35</span>
-<span id="LID36" rel="#L36">36</span>
-<span id="LID37" rel="#L37">37</span>
-<span id="LID38" rel="#L38">38</span>
-<span id="LID39" rel="#L39">39</span>
-<span id="LID40" rel="#L40">40</span>
-<span id="LID41" rel="#L41">41</span>
-<span id="LID42" rel="#L42">42</span>
-<span id="LID43" rel="#L43">43</span>
-<span id="LID44" rel="#L44">44</span>
-<span id="LID45" rel="#L45">45</span>
-<span id="LID46" rel="#L46">46</span>
-<span id="LID47" rel="#L47">47</span>
-<span id="LID48" rel="#L48">48</span>
-<span id="LID49" rel="#L49">49</span>
-<span id="LID50" rel="#L50">50</span>
-<span id="LID51" rel="#L51">51</span>
-<span id="LID52" rel="#L52">52</span>
-<span id="LID53" rel="#L53">53</span>
-<span id="LID54" rel="#L54">54</span>
-<span id="LID55" rel="#L55">55</span>
-<span id="LID56" rel="#L56">56</span>
-<span id="LID57" rel="#L57">57</span>
-<span id="LID58" rel="#L58">58</span>
-<span id="LID59" rel="#L59">59</span>
-<span id="LID60" rel="#L60">60</span>
-<span id="LID61" rel="#L61">61</span>
-<span id="LID62" rel="#L62">62</span>
-<span id="LID63" rel="#L63">63</span>
-<span id="LID64" rel="#L64">64</span>
-<span id="LID65" rel="#L65">65</span>
-<span id="LID66" rel="#L66">66</span>
-<span id="LID67" rel="#L67">67</span>
-<span id="LID68" rel="#L68">68</span>
-<span id="LID69" rel="#L69">69</span>
-<span id="LID70" rel="#L70">70</span>
-<span id="LID71" rel="#L71">71</span>
-<span id="LID72" rel="#L72">72</span>
-<span id="LID73" rel="#L73">73</span>
-<span id="LID74" rel="#L74">74</span>
-<span id="LID75" rel="#L75">75</span>
-<span id="LID76" rel="#L76">76</span>
-<span id="LID77" rel="#L77">77</span>
-<span id="LID78" rel="#L78">78</span>
-<span id="LID79" rel="#L79">79</span>
-<span id="LID80" rel="#L80">80</span>
-</pre>
-          </td>
-          <td width="100%">
-            
-              <div class="highlight"><pre><div class='line' id='LC1'>&nbsp;<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ui-widget-content ui-corner-all&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC2'>&nbsp;&nbsp;<span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;ui-widget-header ui-corner-all&quot;</span><span class="nt">&gt;</span>New Task<span class="nt">&lt;/h1&gt;</span></div><div class='line' id='LC3'>&nbsp;&nbsp;&nbsp;<span class="nt">&lt;div&gt;</span></div><div class='line' id='LC4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;task_new&quot;</span> <span class="na">action=</span><span class="s">&quot;/api/task/create&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span> </div><div class='line' id='LC5'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;p&gt;</span></div><div class='line' id='LC6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;task_name&quot;</span><span class="nt">&gt;</span>Name:<span class="nt">&lt;/label&gt;</span></div><div class='line' id='LC7'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;indent&quot;</span>  <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;task_name&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC8'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/p&gt;</span></div><div class='line' id='LC9'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;p&gt;</span></div><div class='line' id='LC10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;task_description&quot;</span><span class="nt">&gt;</span>Description<span class="nt">&lt;/label&gt;</span></div><div class='line' id='LC11'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">&quot;indent&quot;</span>  <span class="na">name=</span><span class="s">&quot;task_description&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span></div><div class='line' id='LC12'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/p&gt;</span></div><div class='line' id='LC13'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;p&gt;</span></div><div class='line' id='LC14'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;task_expiration&quot;</span><span class="nt">&gt;</span>Expiration<span class="nt">&lt;/label&gt;</span></div><div class='line' id='LC15'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;indent&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;task_expiration&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC16'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;p&gt;</span></div><div class='line' id='LC17'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;p&gt;</span></div><div class='line' id='LC18'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;task_points&quot;</span><span class="nt">&gt;</span>Points<span class="nt">&lt;/label&gt;</span> </div><div class='line' id='LC19'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;indent&quot;</span> <span class="na">id=</span><span class="s">&quot;points_slider&quot;</span> <span class="na">style=</span><span class="s">&quot;width:6em; float:left&quot;</span><span class="nt">&gt;&lt;/div&gt;</span> </div><div class='line' id='LC20'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;task_points&quot;</span> <span class="na">readonly=</span><span class="s">&quot;true&quot;</span> <span class="na">style=</span><span class="s">&quot;margin-left: 10px; width: 30px&quot;</span><span class="nt">/&gt;</span> </div><div class='line' id='LC21'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/p&gt;</span></div><div class='line' id='LC22'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;p&gt;</span></div><div class='line' id='LC23'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;task_estimatedtime&quot;</span><span class="nt">&gt;</span>Estimated Time<span class="nt">&lt;/label&gt;</span> </div><div class='line' id='LC24'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;indent&quot;</span> <span class="na">id=</span><span class="s">&quot;estimatedtime_slider&quot;</span> <span class="na">style=</span><span class="s">&quot;width:6em; float:left&quot;</span><span class="nt">&gt;&lt;/div&gt;</span> </div><div class='line' id='LC25'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;task_estimatedtime&quot;</span> <span class="na">readonly=</span><span class="s">&quot;true&quot;</span> <span class="na">style=</span><span class="s">&quot;margin-left: 10px; width: 30px&quot;</span><span class="nt">/&gt;</span> (hrs)</div><div class='line' id='LC26'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/p&gt;</span></div><div class='line' id='LC27'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">&quot;clear:left&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC28'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;task_template&quot;</span><span class="nt">&gt;</span>Type<span class="nt">&lt;/label&gt;</span></div><div class='line' id='LC29'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">&quot;indent&quot;</span> <span class="na">name=</span><span class="s">&quot;task_template&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC30'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{% for task_type in task_types %}</div><div class='line' id='LC31'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;{{ task_type.TaskTemplate.key.id }}&quot;</span><span class="nt">&gt;</span>{{ task_type.name }}<span class="nt">&lt;/option&gt;</span></div><div class='line' id='LC32'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{% endfor %}</div><div class='line' id='LC33'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/select&gt;</span></div><div class='line' id='LC34'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/p&gt;</span></div><div class='line' id='LC35'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">&quot;tasktemplate&quot;</span><span class="nt">&gt;&lt;/p&gt;</span></div><div class='line' id='LC36'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;p&gt;</span></div><div class='line' id='LC37'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;label&gt;</span><span class="ni">&amp;nbsp;</span><span class="nt">&lt;/label&gt;</span></div><div class='line' id='LC38'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;indent&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;Create&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC39'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;p&gt;</span></div><div class='line' id='LC40'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/form&gt;</span></div><div class='line' id='LC41'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/div&gt;</span></div><div class='line' id='LC42'>&nbsp;&nbsp;<span class="nt">&lt;/div&gt;</span></div><div class='line' id='LC43'><span class="nt">&lt;script&gt;</span></div><div class='line' id='LC44'><br/></div><div class='line' id='LC45'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;select[name=&quot;task_template&quot;]&#39;</span><span class="p">).</span><span class="nx">change</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span></div><div class='line' id='LC46'>&nbsp;&nbsp;<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span></div><div class='line' id='LC47'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/tasktemplate/&#39;</span> <span class="o">+</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;select[name=&quot;task_template&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span></div><div class='line' id='LC48'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span></div><div class='line' id='LC49'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#tasktemplate&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span></div><div class='line' id='LC50'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span></div><div class='line' id='LC51'>&nbsp;&nbsp;<span class="p">});</span></div><div class='line' id='LC52'><span class="p">});</span></div><div class='line' id='LC53'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;select[name=&quot;task_template&quot;]&#39;</span><span class="p">).</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;change&#39;</span><span class="p">);</span></div><div class='line' id='LC54'><br/></div><div class='line' id='LC55'><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> </div><div class='line' id='LC56'>&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#task_new&#39;</span><span class="p">).</span><span class="nx">ajaxForm</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> </div><div class='line' id='LC57'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// Change to dialog</span></div><div class='line' id='LC58'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Thank you for your comment!&quot;</span><span class="p">);</span> </div><div class='line' id='LC59'>&nbsp;&nbsp;<span class="p">});</span> </div><div class='line' id='LC60'>&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;task_expiration&quot;]&#39;</span><span class="p">).</span><span class="nx">datepicker</span><span class="p">();</span></div><div class='line' id='LC61'>&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;input:submit&quot;</span><span class="p">).</span><span class="nx">button</span><span class="p">();</span></div><div class='line' id='LC62'>&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#points_slider&#39;</span><span class="p">).</span><span class="nx">slider</span><span class="p">({</span></div><div class='line' id='LC63'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">min</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span></div><div class='line' id='LC64'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">max</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span></div><div class='line' id='LC65'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">step</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span></div><div class='line' id='LC66'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">slide</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">ui</span><span class="p">)</span> <span class="p">{</span></div><div class='line' id='LC67'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;task_points&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">ui</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span></div><div class='line' id='LC68'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span></div><div class='line' id='LC69'>&nbsp;&nbsp;&nbsp;<span class="p">});</span></div><div class='line' id='LC70'>&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;task_points&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#points_slider&#39;</span><span class="p">).</span><span class="nx">slider</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">));</span></div><div class='line' id='LC71'>&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#estimatedtime_slider&#39;</span><span class="p">).</span><span class="nx">slider</span><span class="p">({</span></div><div class='line' id='LC72'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">min</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span></div><div class='line' id='LC73'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">max</span><span class="o">:</span> <span class="mi">15</span><span class="p">,</span></div><div class='line' id='LC74'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">slide</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">ui</span><span class="p">)</span> <span class="p">{</span></div><div class='line' id='LC75'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;task_estimatedtime&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">ui</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span></div><div class='line' id='LC76'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span></div><div class='line' id='LC77'>&nbsp;&nbsp;&nbsp;<span class="p">});</span></div><div class='line' id='LC78'>&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;task_estimatedtime&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#estimatedtime_slider&#39;</span><span class="p">).</span><span class="nx">slider</span><span class="p">(</span><span class="s1">&#39;value&#39;</span><span class="p">));</span></div><div class='line' id='LC79'><span class="p">});</span> </div><div class='line' id='LC80'>&nbsp;&nbsp;<span class="nt">&lt;/script&gt;</span></div></pre></div>
-            
-          </td>
-        </tr>
-      </table>
-    
-  </div>
-
-
-      </div>
-    </div>
-
-  
-
-
-    </div>
-  
-      
-
-      <div class="push"></div>
-    </div>
-
-    <div id="footer">
-      <div class="site">
-        <div class="info">
-          <div class="links">
-            <a href="http://github.com/blog"><b>Blog</b></a> |
-            <a href="http://support.github.com?sso=nAtZVbNLcN64cpKeP4By5Vyq8QJ-jHGbVjzae87U4ETXdGD6KDLkl3LYkPiC35nPlKPd0GlNF7AbJMnFH4IbNt3VTwuBPkpYin67yfQrJINfwrlKVwc84jx7U8xku8W0YSnKdXpg8KWm7G3K72viMh6A65VnhKaidHsI1x7jflIlfAI_yfv67m9L_pMM9K-i4XajVfZmEOkd2qXsp_4EelCM0mXn3H9iDGd6E70WmfNg1mVT3MUZPkcUHmCiDTji">Support</a> |
-            <a href="http://github.com/training">Training</a> |
-            <a href="http://github.com/contact">Contact</a> |
-            <a href="http://develop.github.com">API</a> |
-            <a href="http://status.github.com">Status</a> |
-            <a href="http://twitter.com/github">Twitter</a> |
-            <a href="http://help.github.com">Help</a> |
-            <a href="http://github.com/security">Security</a>
-          </div>
-          <div class="company">
-            &copy;
-            2010
-            <span id="_rrt" title="0.24830s from fe3.rs.github.com">GitHub</span> Inc.
-            All rights reserved. |
-            <a href="/site/terms">Terms of Service</a> |
-            <a href="/site/privacy">Privacy Policy</a>
-          </div>
-        </div>
-        <div class="sponsor">
-          <div>
-            Powered by the <a href="http://www.rackspace.com ">Dedicated
-            Servers</a> and<br/> <a href="http://www.rackspacecloud.com">Cloud
-            Computing</a> of Rackspace Hosting<span>&reg;</span>
-          </div>
-          <a href="http://www.rackspace.com">
-            <img alt="Dedicated Server" src="http://assets1.github.com/images/modules/footer/rackspace_logo.png?53081acd2dd130cebd1da08f5aa8f7897bb3ae9e" />
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <script>window._auth_token = "f92aeecdc652c42088776cbaf36821d80bf096cb"</script>
-    
-
-    <script type="text/javascript">
-      _kmq.push(['trackClick', 'entice_banner_link', 'Entice banner clicked']);
-      
-    </script>
-    
-  </body>
-</html>
-
+$(document).ready(function() { 
+  $('#task_new').ajaxForm(function() { 
+    // Change to dialog
+    alert("Thank you for your comment!"); 
+  }); 
+  $('input[name="task_expiration"]').datepicker();
+  $("input:submit").button();
+  $('#points_slider').slider({
+        min: 1,
+        max: 30,
+        step: 5,
+        slide: function(event, ui) {
+            $('input[name="task_points"]').val(ui.value);
+        }
+   });
+  $('input[name="task_points"]').val($('#points_slider').slider('value'));
+  $('#estimatedtime_slider').slider({
+        min: 1,
+        max: 15,
+        slide: function(event, ui) {
+            $('input[name="task_estimatedtime"]').val(ui.value);
+        }
+   });
+  $('input[name="task_estimatedtime"]').val($('#estimatedtime_slider').slider('value'));
+}); 
+  </script>
