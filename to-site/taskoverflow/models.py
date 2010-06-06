@@ -24,11 +24,10 @@ class Task(db.Model):
     task_type = db.ReferenceProperty(TaskType)
     completed = db.DateTimeProperty(auto_now_add=True)
     task_state =  db.ReferenceProperty(TaskState)
+    task_meta_data = db.ReferenceProperty(TaskMetaData)
 
 class TaskMetaData(db.Expando):
-    UserID = db.IntegerProperty()
-    Task = db.ReferenceProperty(Task,
-                                    collection_name='taskMetaData')
+    pass
 
 class User(db.Model):
     Name = db.StringProperty()
