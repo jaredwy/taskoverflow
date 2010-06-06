@@ -147,7 +147,7 @@ def task_create(request):
         },
         'task_location': {
             'required': False,
-            # TODO: add a latlon validator (numerics comma separated)
+            # TODO : add the location checks
             'checks': [],
         },
         'task_points': {
@@ -175,8 +175,8 @@ def task_create(request):
                     estimatedTime = field_values['task_estimatedtime'],
                     taskType = field_values['task_template'],
                     points = field_values['task_points'],
-                    description = field_values['task_description'],
-                    location = field_values['task_location'])
+                    location = field_values['task_location'],
+                    description = field_values['task_description'])
         }
             
         return HttpResponse(demjson.encode(api_response))
