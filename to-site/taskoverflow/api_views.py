@@ -31,7 +31,12 @@ def is_datetime(value):
     # search_results = re.search("(\d{4}\-\d{2}\-\d{2})\s?(\d{2}\:\d{2}:\d{0,2})")
     
     # check the results
-    date_value = datetime.datetime.strptime(value, '%Y-%m-%d %H:%M:%S')
+    try:
+        # TODO: fix this so it works in a more internationalized way
+        date_value = datetime.datetime.strptime(value, '%m-%d-%Y')
+        # date_value = datetime.datetime.strptime(value, '%Y-%m-%d %H:%M:%S')
+    except ValueError, err:
+        raise ValidateError("Invalid date format")
 
     return date_value
         
@@ -137,6 +142,7 @@ def task_create(request):
         },
         'task_template': {
             'required': True,
+            'checks': ['integer'],
             # ADD CUSTOM VALIDATION TO CHECK FOR TASK TYPE EXISTANCE
         },
         'task_points': {
@@ -154,15 +160,20 @@ def task_create(request):
     if (errors):
         return render_errors(errors)
     else:
+        # create the new task
         dl = DataLayer()
-        dl.CreateTask(
-            title = field_values['task_name'],
-            expiration = field_values['task_expiration'],
-            estimatedTime = field_values['task_estimatedtime'],
-            taskType = field_values['task_template'],
-            points = field_values['task_points'])
+        api_response = {
+            'message': 'Sucessfully created task',
+            'id': dl.CreateTask(
+                    title = field_values['task_name'],
+                    expiration = field_values['task_expiration'],
+                    estimatedTime = field_values['task_estimatedtime'],
+                    taskType = field_values['task_template'],
+                    points = field_values['task_points'],
+                    description = field_values['task_description'])
+        }
             
-        return HttpResponse("ALL OK")
+        return HttpResponse(demjson.encode(api_response))
         
 def task_get(request, id):
     # get the datalasy

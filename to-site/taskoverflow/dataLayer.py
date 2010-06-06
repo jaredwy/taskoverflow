@@ -65,7 +65,7 @@ class DataLayer():
     def GetTaskTemplate(self,templateid):
         return models.TaskTemplate().get_by_id(templateid)
        
-    def CreateTask(self, title, expiration, estimatedTime, taskType, points=0, description=''):
+    def CreateTask(self,title,expiration,estimatedTime,taskType,description='',points=0):
         task = models.Task()
         task.title = title
         task.expiration = expiration
@@ -77,6 +77,6 @@ class DataLayer():
         return task.key().id()
         
     #@memoize('tasktypes')  
-    def GetTaskType(id):
+    def GetTaskType(self, id):
         #TODO: add memcache
         return models.TaskType.get_by_id(id)
