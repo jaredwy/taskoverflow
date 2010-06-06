@@ -54,10 +54,8 @@ def user_view(request, user_id):
     return HttpResponse("Showing user")
 
 def create_data(request):
-  
     create = DataCreater()
     users = create.CreateUsers()
-    
     templates = create.CreateTaskTemplates()
     taskTypes = create.CreateTaskType(templates)
     traits = create.CreateUserTraits(taskTypes,users)
