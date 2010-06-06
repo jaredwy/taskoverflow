@@ -28,14 +28,20 @@ class DataLayer():
         return types
     
     
-    def GetTaskTemplate(self, task_id):
-        task = models.TaskType().get_by_id(task_id)
+    def GetTaskTemplate(self, tasktype_id):
+        task = models.TaskType().get_by_id(tasktype_id)
         return task.TaskTemplate.template 
         
+    
     #@memoize('tasks')   
     def GetTasks(self):
         #TODO: sort
         tasks = models.Task().all().fetch(1000)
+        return tasks
+        
+    #@memoize('tasks')   
+    def GetTask(self, task_id):
+        tasks = models.Task().get_by_id(task_id)
         return tasks
     
     

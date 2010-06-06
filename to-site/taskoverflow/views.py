@@ -13,7 +13,9 @@ import dataLayer
 
 
 def task_view(request, task_id):
-    return render_to_response('task_view.html', {},
+    data = dataLayer.DataLayer()
+    task = data.GetTask(int(task_id))
+    return render_to_response('task_view.html', {'task': task},
                                context_instance=RequestContext(request))
     
 def task_new(request):
@@ -22,29 +24,9 @@ def task_new(request):
     return render_to_response('task_new.html', {'task_templates': templates},
                                context_instance=RequestContext(request))
 
-
-def tasktemplate(request, tasktemplate_id):
-    
-    
-    data = dataLayer.DataLayer()
-    logging.info(tasktemplate_id)
-    templates = data.GetTaskTemplate(tasktemplate_id)
-    
-    task_fields =  [
-     {"label": "From",
-      "name": "fromlanguage",
-      "value": "",
-      "type": "input"},
-     {"label": "To",
-      "name": "tolanguage",
-      "value": ["spanish", "english"],
-      "type": "dropdown"},]
-      
-      
 def tasktemplate(request, tasktemplate_id):
     data = dataLayer.DataLayer()
     template = data.GetTaskTemplate(int(tasktemplate_id))
-    logging.info(template)
     task_fields = simplejson.loads(template)
     return render_to_response('taskfield_include.html', {'task_fields': task_fields},
                                context_instance=RequestContext(request))
@@ -75,8 +57,6 @@ def create_data(request):
     templates = create.CreateTaskTemplates()
     taskTypes = create.CreateTaskType(templates)
     traits = create.CreateUserTraits(taskTypes,users)
-    logging.info("Created a task with id" + create.CreateTasks(taskTypes))
-    #create.CreateUserInfo(users)
     return HttpResponse("created user")
 
 class DataCreater():
