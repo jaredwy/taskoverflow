@@ -4,13 +4,12 @@ Contains the API views for the
 
 import sys
 import logging
+from validator import Validator, ValidateError
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.shortcuts import get_object_or_404, render_to_response
 from django.utils import simplejson
-from django.core import validators
-# from django.core.validators
 
 class APIError(object):
     errorType = None
@@ -38,18 +37,45 @@ class APIValidationError(APIError):
 
 # TODO: move this into a library out of the views (maybe??)
 def apigen_validate(request, instructions, errors):
+    # define the validated field values
+    validated_fieldvalues = {}
+    
+    # create the validator 
+    vinst = Validator()
+    
     # iterate through the instructions and check to see if everything stacks up
     for fname, finst in instructions.iteritems():
+        logging.info("checking validity of field: %s\n" % fname)
+        
+        # get the field value
+        field_value = None
+        if request.POST.__contains__(fname):
+            field_value = request.POST[fname]
+
         logging.error("checking validity of field: %s\n" % fname)
         
-        
         # if the field is required and no data is supplied then add a validation error
-        if (finst['required'] and (not request.POST.__contains__(fname))):
+        if finst['required'] and (not field_value):
             errors.append(APIValidationError(message = "Field is required", target = fname))
         
-        # TODO: run sql injection attack checks    
+        # TODO: run sql injection attack checks
         
         # if we get past the requiredness check, let run the specified validators
+        elif finst.__contains__('checks') and finst['checks']:
+            # iterate through the validators and dynamically run
+            for check_name in finst['checks']:
+                logging.info("running check %s for field %s\n" % (check_name, fname))
+                
+                # ask the validator to run the required check
+                try:
+                    # print >> sys.stderr, "attempting to call module function %s" % dir(validators),
+                    validated_fieldvalues[fname] = vinst.check(check_name, field_value)
+                except ValidateError, err:
+                    logging.info(sys.stderr, "Caught validation error %s" % err)
+                    errors.append(APIValidationError(message = err, target = fname))
+    
+                    
+    return validated_fieldvalues
 
 # TODO: move this to the module aswell
 def render_errors(errors):
@@ -97,8 +123,7 @@ def task_create(request):
             'required': True,
         },
         'task_expiration': {
-            'required': True,
-            'validation': ['isValidANSIDatetime'],
+            'required': True
         },
         'task_est': {
             'required': True,
@@ -109,7 +134,7 @@ def task_create(request):
         },
         'task_points': {
             'required': False,
-            'validation': ['isInteger'],
+            'checks': ['integer'],
         }}
 
     # ask for some validation

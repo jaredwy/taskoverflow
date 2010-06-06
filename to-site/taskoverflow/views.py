@@ -10,7 +10,6 @@ from django.utils import simplejson
 
 import models
 import dataLayer
-import forms
 
 
 def task_view(request, task_id):
@@ -42,10 +41,10 @@ def tasktemplate(request, tasktemplate_id):
       "type": "dropdown"},]
       
       
-
-def tasktemplate(request, tasktemplate_key):
+def tasktemplate(request, tasktemplate_id):
     data = dataLayer.DataLayer()
-    template = data.GetTaskTemplate(tasktemplate_key)
+    template = data.GetTaskTemplate(int(tasktemplate_id))
+    logging.info(template)
     task_fields = simplejson.loads(template)
     return render_to_response('taskfield_include.html', {'task_fields': task_fields},
                                context_instance=RequestContext(request))

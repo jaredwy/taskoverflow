@@ -11,10 +11,10 @@
       <textarea name="task_description"></textarea>
      </p>
      <p>
-      <label for="task_template">Task Template</label>
+      <label for="task_template">Task Type</label>
       <select id="tasktemplate_dropdown" name="task_template">
-       {% for task_template in task_templates %}
-        <option name="{{ task_template.key }}">{{ task_template.name }}</option>
+       {% for task_type in task_types %}
+        <option value="{{ task_type.key.id }}">{{ task_type.name }}</option>
        {% endfor %}
       </select>
      </p>
