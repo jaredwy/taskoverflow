@@ -30,7 +30,7 @@ class DataLayer():
     
     def GetTaskTemplate(self, task_id):
         task = models.TaskType().get_by_id(task_id)
-        return task.template 
+        return task.TaskTemplate.template 
         
     #@memoize('tasks')   
     def GetTasks(self):

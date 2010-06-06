@@ -3,39 +3,78 @@
    <div>
      <form id="task_new" action="/api/task/create" method="post"> 
      <p>
-      <label for="task_name">Task Name:</label>
-      <input type="text" name="task_name">
+      <label for="task_name">Name:</label>
+      <input class="indent"  type="text" name="task_name">
      </p>
      <p>
-      <label for="task_description">Task Description</label>
-      <textarea name="task_description"></textarea>
+      <label for="task_description">Description</label>
+      <textarea class="indent"  name="task_description"></textarea>
      </p>
      <p>
-      <label for="task_template">Task Type</label>
-      <select id="tasktemplate_dropdown" name="task_template">
+       <label for="task_date">Expiration</label>
+       <input class="indent" type="text" name="task_expiration">
+     <p>
+     <p>
+       <label for="task_points">Points</label> 
+       <div class="indent" id="points_slider" style="width:6em; float:left"></div> 
+       <input type="text" name="task_points" readonly="true" style="margin-left: 10px; width: 30px"/> 
+     </p>
+     <p>
+       <label for="task_estimatedtime">Estimated Time</label> 
+       <div class="indent" id="estimatedtime_slider" style="width:6em; float:left"></div> 
+       <input type="text" name="task_estimatedtime" readonly="true" style="margin-left: 10px; width: 30px"/> (hrs)
+     </p>
+     <p style="clear:left">
+      <label for="task_template">Type</label>
+      <select class="indent" name="task_template">
        {% for task_type in task_types %}
         <option value="{{ task_type.key.id }}">{{ task_type.name }}</option>
        {% endfor %}
       </select>
      </p>
      <p id="tasktemplate"></p>
-     <p><input type="submit" value="Create"/></p>
+     <p>
+     <label>&nbsp;</label>
+     <input class="indent" type="submit" value="Create">
+     <p>
      </form>
     </div>
   </div>
 <script>
-$('#tasktemplate_dropdown').change(function() {
+
+$('select[name="task_template"]').change(function() {
   $.ajax({
-    url: '/tasktemplate/' + $('#tasktemplate_dropdown').val(),
+    url: '/tasktemplate/' + $('select[name="task_template"]').val(),
     success: function(data) {
        $('#tasktemplate').html(data);
     }
   });
 });
+$('select[name="task_template"]').trigger('change');
+
 $(document).ready(function() { 
   $('#task_new').ajaxForm(function() { 
     // Change to dialog
     alert("Thank you for your comment!"); 
   }); 
+  $('input[name="task_expiration"]').datepicker();
+  $("input:submit").button();
+  $('#points_slider').slider({
+        min: 1,
+        max: 30,
+        step: 5,
+        slide: function(event, ui) {
+            $('input[name="task_points"]').val(ui.value);
+        }
+   });
+  $('input[name="task_points"]').val($('#points_slider').slider('value'));
+  $('#estimatedtime_slider').slider({
+        min: 1,
+        max: 15,
+        slide: function(event, ui) {
+            $('input[name="task_estimatedtime"]').val(ui.value);
+        }
+   });
+  $('input[name="task_estimatedtime"]').val($('#estimatedtime_slider').slider('value'));
 }); 
   </script>
