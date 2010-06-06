@@ -1,5 +1,6 @@
 # Create your views here.
 import logging
+import datetime
 
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
@@ -7,6 +8,7 @@ from datetime import tzinfo, timedelta, datetime, date
 from django.template import RequestContext
 from django.shortcuts import get_object_or_404, render_to_response
 from django.utils import simplejson
+from google.appengine.ext import db
 
 import models
 import dataLayer
@@ -14,7 +16,11 @@ import dataLayer
 def task_view(request, task_id):
     data = dataLayer.DataLayer()
     task = data.GetTask(int(task_id))
-    return render_to_response('task_view.html', {'task': task},
+    task_type = task.task_type.name
+    metadata = []
+    for task_property in task.dynamic_properties():
+      metadata.append({'name': task_property, 'value': task.__getattr__(task_property)})
+    return render_to_response('task_view.html', {'task_type': task_type, 'task': task, 'metadata': metadata},
                                context_instance=RequestContext(request))
     
 def task_new(request):
@@ -63,14 +69,39 @@ def create_data(request):
     tasks= create.CreateTasks(taskTypes,task_meta_data)
     return HttpResponse("created user")
 
+def delete_data(request):
+    create = DataCreater()
+    create.DeleteAll()
+    return HttpResponse("deleted stuff")
+    
+    
 class DataCreater():
     #user creators
+    def DeleteAll(self):
+        query = models.User.all()
+        entries =query.fetch(1000)
+        db.delete(entries)
+        
+        query = models.Task.all()
+        entries =query.fetch(1000)
+        db.delete(entries)
+        
+        query = models.TaskTemplate.all()
+        entries =query.fetch(1000)
+        db.delete(entries)
+        
+        query = models.TaskType.all()
+        entries =query.fetch(1000)
+        db.delete(entries)
+        
+        
     def CreateMetaData(self):
        data = models.TaskMetaData()
        data.from_language = "Spanish"
        data.to_langauge = "English"
        data.put()
        return data
+       
        
     def CreateUsers(self):
         usera = models.User()
@@ -94,6 +125,9 @@ class DataCreater():
     def CreateTasks(self,types,task_meta_data):
         taska = models.Task()
         taska.title = "Dig a hole"
+        taska.description = "It must be 10 feet by 10 feet and be awesome."
+        taska.expiration = datetime.today() + timedelta(days=3)
+        taska.estimated_time = 3
         taska.points = 10
         taska.taskType = types[0]
         taska.task_meta_data = task_meta_data
