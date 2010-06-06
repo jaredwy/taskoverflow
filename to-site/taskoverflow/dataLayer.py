@@ -27,7 +27,13 @@ class DataLayer():
         types = models.TaskType().all().fetch(1000)
         return types
     
-    
+    def GetMetadataLabels(self):
+        # TODO - replace with datastore later?
+        labels = {'from_language': 'From',
+                  'to_language': 'To',
+                  'location': 'Location'}
+        return labels
+        
     def GetTaskTemplate(self, tasktype_id):
         task = models.TaskType().get_by_id(tasktype_id)
         return task.TaskTemplate.template 

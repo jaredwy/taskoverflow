@@ -18,8 +18,11 @@ def task_view(request, task_id):
     task = data.GetTask(int(task_id))
     task_type = task.type.name
     metadata = []
+    labels = data.GetMetadataLabels()
     for task_property in task.metadata.dynamic_properties():
-      metadata.append({'name': task_property, 'value': task.metadata.__getattr__(task_property)})
+      metadata.append({'name': task_property, 
+                       'value': task.metadata.__getattr__(task_property),
+                       'label': labels.get(task_property, task_property)})
     logging.info(metadata);
     return render_to_response('task_view.html', {'task_type': task_type, 'task': task, 'metadata': metadata},
                                context_instance=RequestContext(request))
@@ -100,7 +103,7 @@ class DataCreater():
     def CreateMetaData(self):
        data = models.TaskMetaData()
        data.from_language = "Spanish"
-       data.to_langauge = "English"
+       data.to_language = "English"
        data.put()
        return data
        
