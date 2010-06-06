@@ -15,19 +15,21 @@ class TaskState(db.Model):
     state = db.StringProperty(required=True, choices=set(["Working", 
     "Completed", "Listed","Review"]),default="Listed")
 
+class TaskMetaData(db.Expando):
+    pass
+
+
 class Task(db.Model):
     title = db.StringProperty()
     description = db.TextProperty()
     expiration = db.DateTimeProperty()
     points = db.IntegerProperty()
-    estimated_time = db.TimeProperty()
-    task_type = db.ReferenceProperty(TaskType)
+    estimated_time = db.IntegerProperty() # hours
+    type = db.ReferenceProperty(TaskType)
     completed = db.DateTimeProperty(auto_now_add=True)
-    task_state =  db.ReferenceProperty(TaskState)
-    task_meta_data = db.ReferenceProperty(TaskMetaData)
+    state =  db.ReferenceProperty(TaskState)
+    metadata = db.ReferenceProperty(TaskMetaData)
 
-class TaskMetaData(db.Expando):
-    pass
 
 class User(db.Model):
     Name = db.StringProperty()
@@ -41,6 +43,6 @@ class UserTraits(db.Model):
 
 class UserTasks(db.Model):
     Own = db.BooleanProperty()
-    User = db.ReferenceProperty(User,collection_name='UserTasks')
+    User = db.ReferenceProperty(User, collection_name='UserTasks')
 
 
