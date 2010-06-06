@@ -1,4 +1,3 @@
 {% extends "base.html" %}
-{% block body %}
-{% include 'task_view_include.html' %}
-{% endblock %}
+{% block title %}Task: {{task.title}}{% endblock %}
+{% block body %}{% include 'task_view_include.html' %}{% endblock %}

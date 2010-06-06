@@ -20,7 +20,7 @@ class Task(db.Model):
     description = db.TextProperty()
     expiration = db.DateTimeProperty()
     points = db.IntegerProperty()
-    estimated_time = db.TimeProperty()
+    estimated_time = db.IntegerProperty() # hours
     task_type = db.ReferenceProperty(TaskType)
     completed = db.DateTimeProperty(auto_now_add=True)
     task_state =  db.ReferenceProperty(TaskState)
@@ -42,6 +42,6 @@ class UserTraits(db.Model):
 
 class UserTasks(db.Model):
     Own = db.BooleanProperty()
-    User = db.ReferenceProperty(User,collection_name='UserTasks')
+    User = db.ReferenceProperty(User, collection_name='UserTasks')
 
 

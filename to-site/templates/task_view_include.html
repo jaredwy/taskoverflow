@@ -1,26 +1,31 @@
 <div class="ui-widget-content ui-corner-all">
    <p>
-     <span class="indent">Title</span>
-     <span>{{task.title}}</span>
+     <span class="label">Title</span>
+     <span class="indent">{{task.title}}</span>
    </p>
    <p>
-     <span class="indent">Description</span>
-     <span>{{task.description}}</span>
+     <span class="label">Description</span>
+     <span class="indent">{{task.description}}</span>
    </p>
    <p>
-     <span class="indent">Expiration</span>
-     <span>{{task.expiration}}</span>
+     <span class="label">Expiration</span>
+     <span class="indent">{{task.expiration}}</span>
    </p>
    <p>
-     <span class="indent">Points</span>
-     <span>{{task.points}}</span>
+     <span class="label">Points</span>
+     <span class="indent">{{task.points}}</span>
    </p>
    <p>
-     <span class="indent">Estimated Time</span>
-     <span>{{task.estimated_time}}</span>
+     <span class="label">Estimated Time</span>
+     <span class="indent">{{task.estimated_time}}</span>
    </p>
    <p>
-     <span class="indent">Type</span>
-     <span>{{task.task_type.name}}</span>
+     <span class="label">Type</span>
+     <span class="indent">{{task.task_type.name}}</span>
    </p>
+   {% for data in metadata %}
+     <span class="label">{{ metadata.name }}</span>
+     <span class="indent">{{ metadata.value }}</span>
+   {% endfor %}
+   
 </div>
