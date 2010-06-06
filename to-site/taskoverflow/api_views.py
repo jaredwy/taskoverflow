@@ -32,7 +32,9 @@ def is_datetime(value):
     
     # check the results
     try:
-        date_value = datetime.datetime.strptime(value, '%Y-%m-%d %H:%M:%S')
+        # TODO: fix this so it works in a more internationalized way
+        date_value = datetime.datetime.strptime(value, '%m-%d-%Y')
+        # date_value = datetime.datetime.strptime(value, '%Y-%m-%d %H:%M:%S')
     except ValueError, err:
         raise ValidateError("Invalid date format")
 
