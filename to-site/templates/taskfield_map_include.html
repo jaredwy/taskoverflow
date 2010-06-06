@@ -4,7 +4,8 @@
 <p>
 <script>
 google.load('maps', '3', {
- other_params: 'sensor=false'
+ other_params: 'sensor=false',
+ callback: 'makeMap'
 });
 
 var map;
@@ -36,5 +37,4 @@ function makeMap() {
   });
 }  
 
-makeMap();
 </script>
