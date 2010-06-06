@@ -29,7 +29,7 @@ class Task(db.Model):
     completed = db.DateTimeProperty(auto_now_add=True)
     state =  db.ReferenceProperty(TaskState)
     metadata = db.ReferenceProperty(TaskMetaData)
-
+    location = db.GeoPtProperty()
 
 class User(db.Model):
     Name = db.StringProperty()

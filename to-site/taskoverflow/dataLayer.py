@@ -48,6 +48,7 @@ class DataLayer():
     #@memoize('tasks')   
     def GetTask(self, task_id):
         tasks = models.Task().get_by_id(task_id)
+        logging.info(tasks)
         return tasks
     
     #@memoize('tasks')   
@@ -65,7 +66,7 @@ class DataLayer():
     def GetTaskTemplate(self,templateid):
         return models.TaskTemplate().get_by_id(templateid)
        
-    def CreateTask(self,title,expiration,estimatedTime,description='',taskType,points=0):
+    def CreateTask(self,title,expiration,estimatedTime,taskType,description='',points=0):
         task = models.Task()
         task.title = title
         task.expiration = expiration
