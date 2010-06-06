@@ -137,6 +137,7 @@ def task_create(request):
         },
         'task_template': {
             'required': True,
+            'checks': ['integer'],
             # ADD CUSTOM VALIDATION TO CHECK FOR TASK TYPE EXISTANCE
         },
         'task_points': {
@@ -154,6 +155,7 @@ def task_create(request):
     if (errors):
         return render_errors(errors)
     else:
+        # create the new task
         dl = DataLayer()
         dl.CreateTask(
             title = field_values['task_name'],
