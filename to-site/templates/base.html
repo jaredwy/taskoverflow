@@ -12,24 +12,42 @@
 <script src="/media/js/jquery-form.js" type="text/javascript" charset="utf-8"></script>
 
 <style type="text/css">
+  @font-face { 
+   font-family: 'sitefont'; 
+   src: url(http://imagine-it.org/google/wave/wordart_font.otf); 
+  }
+
   body {
-    font-family: Georgia, Garamond;
+    font-family: 'sitefont'; 
   }
   label, .label {
     width: 8em;
     float: left;
     text-align: right;
     margin-right: 0.5em;
-    display: block
+    display: block;
+    font-weight: bold;
   }
 
   .indent {
     margin-left: 1em;
   }
+  
+  h1, h2, h3, h4, h5 {
+    padding-left: 5px;
+  }
 </style>
 </head>
 <body>
+<div style="width:100%; background-color: orange; color: white; padding-bottom:0px; margin-bottom:0px">
+<h1>The Little Things</h1>
+</div>
+<div style="clear:both"></div>
 {% block body %}
 {% endblock %}
+<div style="clear:both; height:20px;"></div>
+<div style="width:100%; text-align: right; background-color: #FEE5AC; color:#FF8C00">
+...because every little thing counts.
+</div>
 </body>
 </html>
