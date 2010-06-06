@@ -15,13 +15,18 @@
        <input class="indent" type="text" name="task_expiration">
      <p>
      <p>
-       <label for="minbeds">Points</label> 
+       <label for="task_points">Points</label> 
        <div class="indent" id="points_slider" style="width:6em; float:left"></div> 
-       <input type="text" name="task_points" readonly="true" style="margin-left: 3px; width: 30px"/> 
+       <input type="text" name="task_points" readonly="true" style="margin-left: 10px; width: 30px"/> 
+     </p>
+     <p>
+       <label for="task_estimatedtime">Estimated Time</label> 
+       <div class="indent" id="estimatedtime_slider" style="width:6em; float:left"></div> 
+       <input type="text" name="task_estimatedtime" readonly="true" style="margin-left: 10px; width: 30px"/> (hrs)
      </p>
      <p style="clear:left">
       <label for="task_template">Type</label>
-      <select class="indent"  id="tasktemplate_dropdown" name="task_template">
+      <select class="indent" name="task_template">
        {% for task_type in task_types %}
         <option value="{{ task_type.key.id }}">{{ task_type.name }}</option>
        {% endfor %}
@@ -29,36 +34,47 @@
      </p>
      <p id="tasktemplate"></p>
      <p>
-     <input class="indent" type="submit" value="Create" class="ui-button ui-button-text-only ui-widget ui-state-default ui-corner-all">
+     <label>&nbsp;</label>
+     <input class="indent" type="submit" value="Create">
      <p>
      </form>
     </div>
   </div>
 <script>
 
-$('#tasktemplate_dropdown').change(function() {
+$('select[name="task_template"]').change(function() {
   $.ajax({
-    url: '/tasktemplate/' + $('#tasktemplate_dropdown').val(),
+    url: '/tasktemplate/' + $('select[name="task_template"]').val(),
     success: function(data) {
        $('#tasktemplate').html(data);
     }
   });
 });
-$('#tasktemplate_dropdown').trigger('change');
+$('select[name="task_template"]').trigger('change');
 
 $(document).ready(function() { 
   $('#task_new').ajaxForm(function() { 
     // Change to dialog
     alert("Thank you for your comment!"); 
   }); 
-  $("input[name='task_expiration']").datepicker();
-  $("#points_slider").slider({
+  $('input[name="task_expiration"]').datepicker();
+  $("input:submit").button();
+  $('#points_slider').slider({
         min: 1,
         max: 30,
+        step: 5,
         slide: function(event, ui) {
-            $("input[name='task_points']").val(ui.value);
+            $('input[name="task_points"]').val(ui.value);
         }
    });
-  $("input[name='task_points']").val($("#points_slider").slider("value"));
+  $('input[name="task_points"]').val($('#points_slider').slider('value'));
+  $('#estimatedtime_slider').slider({
+        min: 1,
+        max: 15,
+        slide: function(event, ui) {
+            $('input[name="task_estimatedtime"]').val(ui.value);
+        }
+   });
+  $('input[name="task_estimatedtime"]').val($('#estimatedtime_slider').slider('value'));
 }); 
   </script>

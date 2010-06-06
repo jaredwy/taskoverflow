@@ -2,10 +2,10 @@
   <p>
   <label for="{{task_field.name}}">{{task_field.label}}</label>
   {% ifequal task_field.type "input" %}
-    <input type="text" name="{{task_field.name}}">
+    <input class="indent" type="text" name="{{task_field.name}}">
   {% endifequal %}
   {% ifequal task_field.type "dropdown" %}
-    <select name="{{task_field.name}}">
+    <select class="indent" name="{{task_field.name}}">
       {% for field_value in task_field.value %}
       <option value="{{field_value}}">{{field_value}}</option>
       {% endfor %}
