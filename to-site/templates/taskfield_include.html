@@ -1,7 +1,7 @@
 {% for task_field in task_fields %}
   <p>
   <label for="{{task_field.name}}">{{task_field.label}}</label>
-  {% ifequal task_field.type "input" %}
+  {% ifequal task_field.type "inputt" %}
     <input class="indent" type="text" name="{{task_field.name}}">
   {% endifequal %}
   {% ifequal task_field.type "dropdown" %}
@@ -11,5 +11,11 @@
       {% endfor %}
     </select>
    {% endifequal %}
+   {% ifequal task_field.type "input" %}
+    <input class="indent" type="hidden" name="{{task_field.name}}">
+    <input type="text" id="address" value="">
+    <input type="button" value="Locate" onclick="showAddress()">
+    {% include 'taskfield_map_include.html' %}
+  {% endifequal %}
    </p>
 {% endfor %}

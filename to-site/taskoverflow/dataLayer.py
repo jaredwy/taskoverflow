@@ -78,6 +78,6 @@ class DataLayer():
         return task.key().id()
         
     #@memoize('tasktypes')  
-    def GetTaskType(id):
+    def GetTaskType(self, id):
         #TODO: add memcache
         return models.TaskType.get_by_id(id)
