@@ -20,7 +20,8 @@ def task_view(request, task_id):
 def task_new(request):
     data = dataLayer.DataLayer()
     templates = data.GetTaskTypes()
-    return render_to_response('task_new.html', {'task_templates': templates},
+    logging.info(templates)
+    return render_to_response('task_new.html', {'task_types': templates},
                                context_instance=RequestContext(request))
 
 
@@ -29,8 +30,8 @@ def tasktemplate(request, tasktemplate_id):
     data = dataLayer.DataLayer()
     logging.info(tasktemplate_id)
     template = data.GetTaskTemplate(int(tasktemplate_id))
-    logging.info(template)
-    task_fields = simplejson.loads(template)
+    logging.info(template.template)
+    task_fields = simplejson.loads(template.template)
     return render_to_response('taskfield_include.html', {'task_fields': task_fields},
                                context_instance=RequestContext(request))
  

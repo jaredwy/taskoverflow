@@ -16,7 +16,6 @@ class TaskState(db.Model):
     "Completed", "Listed","Review"]),default="Listed")
 
 class Task(db.Model):
-    ID = db.IntegerProperty()
     title = db.StringProperty()
     description = db.TextProperty()
     expiration = db.DateTimeProperty()

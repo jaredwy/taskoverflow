@@ -28,7 +28,7 @@
       <label for="task_template">Type</label>
       <select class="indent" name="task_template">
        {% for task_type in task_types %}
-        <option value="{{ task_type.key.id }}">{{ task_type.name }}</option>
+        <option value="{{ task_type.TaskTemplate.key.id }}">{{ task_type.name }}</option>
        {% endfor %}
       </select>
      </p>
