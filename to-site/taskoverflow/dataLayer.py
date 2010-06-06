@@ -65,7 +65,7 @@ class DataLayer():
     def GetTaskTemplate(self,templateid):
         return models.TaskTemplate().get_by_id(templateid)
        
-    def CreateTask(self,title,expiration,estimatedTime,description='',taskType,points=0):
+    def CreateTask(self, title, expiration, estimatedTime, taskType, points=0, description=''):
         task = models.Task()
         task.title = title
         task.expiration = expiration
