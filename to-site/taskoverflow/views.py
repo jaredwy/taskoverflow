@@ -11,7 +11,6 @@ from django.utils import simplejson
 import models
 import dataLayer
 
-
 def task_view(request, task_id):
     data = dataLayer.DataLayer()
     task = data.GetTask(int(task_id))
@@ -21,20 +20,25 @@ def task_view(request, task_id):
 def task_new(request):
     data = dataLayer.DataLayer()
     templates = data.GetTaskTypes()
-    return render_to_response('task_new.html', {'task_templates': templates},
+    logging.info(templates)
+    return render_to_response('task_new.html', {'task_types': templates},
                                context_instance=RequestContext(request))
-
+                               
+                               
 def tasktemplate(request, tasktemplate_id):
     data = dataLayer.DataLayer()
     template = data.GetTaskTemplate(int(tasktemplate_id))
-    task_fields = simplejson.loads(template)
+    task_fields = simplejson.loads(template.template)
     return render_to_response('taskfield_include.html', {'task_fields': task_fields},
                                context_instance=RequestContext(request))
  
 def tasks_search(request): 
+    data = dataLayer.DataLayer()
+    templates = data.GetTaskTypes()
     # Extract query params, do search
     # Render into search panel
-    return HttpResponse("Searching tasks")
+    return render_to_response('tasks_search.html',{'task_types' : templates},
+                               context_instance=RequestContext(request))
   
 def tasks_recent(request):
     # Extract recent query params (like user), do db query
@@ -57,6 +61,7 @@ def create_data(request):
     templates = create.CreateTaskTemplates()
     taskTypes = create.CreateTaskType(templates)
     traits = create.CreateUserTraits(taskTypes,users)
+    tasks= create.CreateTasks(taskTypes)
     return HttpResponse("created user")
 
 class DataCreater():
@@ -86,6 +91,7 @@ class DataCreater():
         taska.points = 10
         taska.taskType = types[0]
         taska.put()
+        return taska.key().id()
      
     def CreateUserTraits(self,type,users):
         users[0].put()

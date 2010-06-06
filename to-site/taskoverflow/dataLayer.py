@@ -44,6 +44,10 @@ class DataLayer():
         tasks = models.Task().get_by_id(task_id)
         return tasks
     
+    #@memoize('tasks')   
+    def GetTask(self,task_id):
+        task = models.Task().get_by_id(task_id)
+        return task
     
     def CreateUser(self,Name,DateOfBirth,UserName):
         newUser = models.User()
@@ -63,7 +67,7 @@ class DataLayer():
         task.points = points
         task.TaskType = GetTaskType(taskType)
         task.put()
-        return task.ID
+        return taska.key().id()
         
     #@memoize('tasktypes')  
     def GetTaskType(id):
