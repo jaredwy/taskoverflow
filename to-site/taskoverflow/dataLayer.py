@@ -60,7 +60,7 @@ class DataLayer():
         newUser.Name = Name
         newUser.DateOfBirth = DateOfBirth
         newUser.UserName = UserName
-        newUser.Put()
+        newUser.put()
         
     def GetTaskTemplate(self,templateid):
         return models.TaskTemplate().get_by_id(templateid)
