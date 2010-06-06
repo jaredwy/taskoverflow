@@ -61,11 +61,19 @@ def create_data(request):
     templates = create.CreateTaskTemplates()
     taskTypes = create.CreateTaskType(templates)
     traits = create.CreateUserTraits(taskTypes,users)
-    tasks= create.CreateTasks(taskTypes)
+    task_meta_data = create.CreateMetaData()
+    tasks= create.CreateTasks(taskTypes,task_meta_data)
     return HttpResponse("created user")
 
 class DataCreater():
     #user creators
+    def CreateMetaData(self):
+       data = models.TaskMetaData()
+       data.from_language = "Spanish"
+       data.to_langauge = "English"
+       data.put()
+       return data
+       
     def CreateUsers(self):
         usera = models.User()
         userb = models.User()
@@ -85,11 +93,12 @@ class DataCreater():
         for user in users:
             print user.Name
             
-    def CreateTasks(self,types):
+    def CreateTasks(self,types,task_meta_data):
         taska = models.Task()
         taska.title = "Dig a hole"
         taska.points = 10
         taska.taskType = types[0]
+        taska.task_meta_data = task_meta_data
         taska.put()
         return taska.key().id()
      

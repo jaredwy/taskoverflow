@@ -15,6 +15,10 @@ class TaskState(db.Model):
     state = db.StringProperty(required=True, choices=set(["Working", 
     "Completed", "Listed","Review"]),default="Listed")
 
+class TaskMetaData(db.Expando):
+    pass
+
+
 class Task(db.Model):
     title = db.StringProperty()
     description = db.TextProperty()
@@ -26,8 +30,6 @@ class Task(db.Model):
     task_state =  db.ReferenceProperty(TaskState)
     task_meta_data = db.ReferenceProperty(TaskMetaData)
 
-class TaskMetaData(db.Expando):
-    pass
 
 class User(db.Model):
     Name = db.StringProperty()
