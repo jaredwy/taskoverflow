@@ -11,7 +11,7 @@ params = urllib.urlencode({
                         "task_expiration": "06/14/2011",
                         "task_estimatedtime": 45,
                         "task_template": 4,
-                        "task_location": "-27.56, 153.234",
+                        "task_location": "-27.34, 153.23",
                         })
 
 resphandle = urllib.urlopen("http://localhost:8080/api/task/create", data = params)
