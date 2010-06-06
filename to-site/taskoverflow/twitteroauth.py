@@ -310,7 +310,7 @@ class TwitterClient(BaseOAuthClient):
         token_info = self.get_data_from_signed_url(
             self.service_info['access_token_url'], oauth_token
             )
-
+        
         key_name = create_uuid()
 
         self.token = OAuthAccessToken(
@@ -328,9 +328,10 @@ class TwitterClient(BaseOAuthClient):
             except IndexError:
                s = ''
 
+        self.response = HttpResponse('Authorisation successful')
         self.token.put()
         #self.set_cookie(key_name)
-        response = HttpResponse('Authorisation successful')
+        
 
     
     # posts an update to Twitter

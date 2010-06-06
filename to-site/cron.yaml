@@ -1,0 +1,4 @@
+cron:
+- description: publishes a update of task updates (if any) to the predefined twitter account
+  url: /publish/tweet
+  schedule: every 1 hours
