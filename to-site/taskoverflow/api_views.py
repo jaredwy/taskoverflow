@@ -4,36 +4,37 @@ Contains the API views for the
 
 import sys
 import logging
+import datetime
+import jsonpickle
 from validator import Validator, ValidateError
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.shortcuts import get_object_or_404, render_to_response
 from django.utils import simplejson
+from dataLayer import DataLayer
 
-class APIError(object):
-    errorType = None
-    params = {}
+def create_error(error_type, **args):
+    params = {
+        'errorType': error_type
+    }
     
-    def setParam(self, keyname, value = None):
-        self.params[keyname] = value
-    
-    def __json__(self):
-        json_dict = { 'errorType': self.errorType }
+    # iterate through the args
+    for k, v in args.iteritems():
+        params[k] = v
         
-        # iterate through the parameters and push them in to the dict
-        for k, v in self.params.iteritems():
-            json_dict[k] = v
-            
-        return json_dict
-        
-class APIValidationError(APIError):
-    target = None
+    return params
+
+
+def is_datetime(value):
+    # regex the value
+    # search_results = re.search("(\d{4}\-\d{2}\-\d{2})\s?(\d{2}\:\d{2}:\d{0,2})")
     
-    def __init__(self, message, target):
-        self.errorType = "validation"
-        self.setParam('message', message)
-        self.setParam('target', target)
+    # check the results
+    date_value = datetime.datetime.strptime(value, '%Y-%m-%d %H:%M:%S')
+
+    return date_value
+        
 
 # TODO: move this into a library out of the views (maybe??)
 def apigen_validate(request, instructions, errors):
@@ -41,7 +42,7 @@ def apigen_validate(request, instructions, errors):
     validated_fieldvalues = {}
     
     # create the validator 
-    vinst = Validator()
+    vinst = Validator({ 'datetime': is_datetime })
     
     # iterate through the instructions and check to see if everything stacks up
     for fname, finst in instructions.iteritems():
@@ -51,12 +52,13 @@ def apigen_validate(request, instructions, errors):
         field_value = None
         if request.POST.__contains__(fname):
             field_value = request.POST[fname]
+            
+        # save the field data to the dict
+        validated_fieldvalues[fname] = field_value
 
-        logging.error("checking validity of field: %s\n" % fname)
-        
         # if the field is required and no data is supplied then add a validation error
         if finst['required'] and (not field_value):
-            errors.append(APIValidationError(message = "Field is required", target = fname))
+            errors.append(create_error("validation", message = "Field is required", target = fname))
         
         # TODO: run sql injection attack checks
         
@@ -64,23 +66,23 @@ def apigen_validate(request, instructions, errors):
         elif finst.__contains__('checks') and finst['checks']:
             # iterate through the validators and dynamically run
             for check_name in finst['checks']:
-                logging.info("running check %s for field %s\n" % (check_name, fname))
+                logging.info("running check %s\n" % check_name)
                 
                 # ask the validator to run the required check
                 try:
                     # print >> sys.stderr, "attempting to call module function %s" % dir(validators),
                     validated_fieldvalues[fname] = vinst.check(check_name, field_value)
                 except ValidateError, err:
-                    logging.info(sys.stderr, "Caught validation error %s" % err)
-                    errors.append(APIValidationError(message = err, target = fname))
-    
+                    logging.info("Caught validation error %s" % err.message)
+                    errors.append(create_error("validation", message = err.message, target = fname))
+
                     
     return validated_fieldvalues
 
 # TODO: move this to the module aswell
 def render_errors(errors):
     # TODO: make this JSON serialization more robust
-    return HttpResponse(simplejson.dumps([e.__json__() for e in errors]))
+    return HttpResponse(simplejson.dumps(errors))
 
 
 """
@@ -123,10 +125,12 @@ def task_create(request):
             'required': True,
         },
         'task_expiration': {
-            'required': True
+            'required': True,
+            'checks': ['datetime'],
         },
         'task_est': {
             'required': True,
+            'checks': ['integer']
         },
         'task_typeid': {
             'required': True,
@@ -136,13 +140,23 @@ def task_create(request):
             'required': False,
             'checks': ['integer'],
         }}
+        
+    logging.info("got post values: %s" % request.POST)
 
     # ask for some validation
     errors = [];
-    apigen_validate(request, param_instructions, errors)
+    field_values = apigen_validate(request, param_instructions, errors)
     
     # if we have validation errors then wrap a validaton error response
     if (errors):
         return render_errors(errors)
     else:
+        dl = DataLayer()
+        dl.CreateTask(
+            title = field_values['task_name'],
+            expiration = field_values['task_expiration'],
+            estimatedTime = field_values['task_est'],
+            taskType = field_values['task_typeid'],
+            points = field_values['task_points'])
+            
         return HttpResponse("ALL OK")
