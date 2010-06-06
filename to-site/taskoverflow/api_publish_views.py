@@ -14,8 +14,8 @@ import publishing
 from twitteroauth import TwitterNotAuthorisedError
 
 
-CONSUMER_KEY = 'FUja3lLCyC4zWe5PmGdfQ'
-CONSUMER_SECRET = '4vjeFWOYWF3eGqHzoVvhzJSZdkhaHTcbJsfFz3qUBnY'
+CONSUMER_KEY = 'yT1RpZrwjURzRYMXrE8DtQ'
+CONSUMER_SECRET = 'ZDQeTWY4go9TkrBZE4VW0pu26QJk8KDvDqC3RopiI'
 
 """
 ENDPOINT:
