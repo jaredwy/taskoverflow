@@ -5,13 +5,13 @@ Contains the API views for the
 import sys
 import logging
 import datetime
-import jsonpickle
+import models
+import demjson
 from validator import Validator, ValidateError
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.shortcuts import get_object_or_404, render_to_response
-from django.utils import simplejson
 from dataLayer import DataLayer
 
 def create_error(error_type, **args):
@@ -37,7 +37,7 @@ def is_datetime(value):
         
 
 # TODO: move this into a library out of the views (maybe??)
-def apigen_validate(request, instructions, errors):
+def apigen_validate(param_container, instructions, errors):
     # define the validated field values
     validated_fieldvalues = {}
     
@@ -50,8 +50,8 @@ def apigen_validate(request, instructions, errors):
         
         # get the field value
         field_value = None
-        if request.POST.__contains__(fname):
-            field_value = request.POST[fname]
+        if param_container.__contains__(fname):
+            field_value = param_container[fname]
             
         # save the field data to the dict
         validated_fieldvalues[fname] = field_value
@@ -82,7 +82,7 @@ def apigen_validate(request, instructions, errors):
 # TODO: move this to the module aswell
 def render_errors(errors):
     # TODO: make this JSON serialization more robust
-    return HttpResponse(simplejson.dumps(errors))
+    return HttpResponse(demjson.encode(errors))
 
 
 """
@@ -124,15 +124,18 @@ def task_create(request):
         'task_name': {
             'required': True,
         },
+        'task_description': {
+            'required': True,
+        },
         'task_expiration': {
             'required': True,
             'checks': ['datetime'],
         },
-        'task_est': {
+        'task_estimatedtime': {
             'required': True,
             'checks': ['integer']
         },
-        'task_typeid': {
+        'task_template': {
             'required': True,
             # ADD CUSTOM VALIDATION TO CHECK FOR TASK TYPE EXISTANCE
         },
@@ -145,7 +148,7 @@ def task_create(request):
 
     # ask for some validation
     errors = [];
-    field_values = apigen_validate(request, param_instructions, errors)
+    field_values = apigen_validate(request.POST, param_instructions, errors)
     
     # if we have validation errors then wrap a validaton error response
     if (errors):
@@ -155,8 +158,38 @@ def task_create(request):
         dl.CreateTask(
             title = field_values['task_name'],
             expiration = field_values['task_expiration'],
-            estimatedTime = field_values['task_est'],
-            taskType = field_values['task_typeid'],
+            estimatedTime = field_values['task_estimatedtime'],
+            taskType = field_values['task_template'],
             points = field_values['task_points'])
             
         return HttpResponse("ALL OK")
+        
+def task_get(request, id):
+    # get the datalasy
+    dl = DataLayer()
+    task_instance = dl.GetTask(int(id))
+    
+    # attempt to add 
+    # datetime.datetime.__dict__['json_response'] = 
+    
+    return HttpResponse(demjson.encode(task_instance.__dict__))
+    
+        
+"""
+ENDPOINT:
+/api/tasktype/create
+
+DESCRIPTION:
+Used to create a new task type in the model
+
+METHODS:
+POST
+
+POSTDATA:
+tasktype_name - the name of the template
+tasktype_value - the value of the template
+tasktype_template - a reference to the template
+"""
+def tasktype_create(request):
+    return HttpResponse("Create a task")
+    
