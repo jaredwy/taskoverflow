@@ -39,7 +39,7 @@ def is_datetime(value):
         raise ValidateError("Invalid date format")
 
     return date_value
-        
+    
 
 # TODO: move this into a library out of the views (maybe??)
 def apigen_validate(param_container, instructions, errors):
@@ -145,6 +145,11 @@ def task_create(request):
             'checks': ['integer'],
             # ADD CUSTOM VALIDATION TO CHECK FOR TASK TYPE EXISTANCE
         },
+        'task_location': {
+            'required': False,
+            # TODO: add a latlon validator (numerics comma separated)
+            'checks': [],
+        },
         'task_points': {
             'required': False,
             'checks': ['integer'],
@@ -170,7 +175,8 @@ def task_create(request):
                     estimatedTime = field_values['task_estimatedtime'],
                     taskType = field_values['task_template'],
                     points = field_values['task_points'],
-                    description = field_values['task_description'])
+                    description = field_values['task_description'],
+                    location = field_values['task_location'])
         }
             
         return HttpResponse(demjson.encode(api_response))
