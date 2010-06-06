@@ -1,5 +1,4 @@
 import models
-import settings
 import logging
 
 def memoize(region="", time=3600):
@@ -12,7 +11,6 @@ def memoize(region="", time=3600):
                 raise Exception("memize-d function does not send key")
             key = region + kwargs["memizekey"]
             del kwargs["memizekey"]
-
             data = memcache.get(key)
             if data is None or not settings.DEBUG:
                 data = fxn(*args, **kwargs)
@@ -24,7 +22,7 @@ def memoize(region="", time=3600):
     return decorator 
 
 class DataLayer():
-    #@memoize('tasktypes')  
+    #@memoize(region='tasktypes')  
     def GetTaskTypes(self):
         types = models.TaskType().all().fetch(1000)
         return types
@@ -47,7 +45,9 @@ class DataLayer():
         newUser.DateOfBirth = DateOfBirth
         newUser.UserName = UserName
         newUser.Put()
-
+        
+    def GetTaskTemplate(self,templateid):
+        return models.TaskTemplate().get_by_id(templateid)
        
     def CreateTask(self,title,expiration,estimatedTime,taskType,points=0):
         newTask = models.Task()
@@ -57,6 +57,7 @@ class DataLayer():
         task.points = points
         task.TaskType = GetTaskType(taskType)
         task.put()
+        return task.ID
         
     #@memoize('tasktypes')  
     def GetTaskType(id):
