@@ -1,6 +1,7 @@
 from appengine_django.models import BaseModel
 from google.appengine.ext import db
 
+
 # Create your models here.
 class TaskTemplate(db.Model):
     template = db.StringProperty()
@@ -44,4 +45,3 @@ class UserTasks(db.Model):
     User = db.ReferenceProperty(User,collection_name='UserTasks')
 
 
-    

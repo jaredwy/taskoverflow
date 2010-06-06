@@ -51,6 +51,8 @@ def apigen_validate(request, instructions, errors):
         field_value = None
         if request.POST.__contains__(fname):
             field_value = request.POST[fname]
+
+        logging.error("checking validity of field: %s\n" % fname)
         
         # if the field is required and no data is supplied then add a validation error
         if finst['required'] and (not field_value):
@@ -88,11 +90,11 @@ TODO: add login decorator
 """
 def task_update(request, key):
     if (request.method == 'POST'):
-        print >> sys.stderr, "GOT POSTED VALUES\n",
+        logging.info("Got posted values")
     
 
     for k, v in request.POST.iteritems():
-        print >> sys.stderr, "%(key)s: %(value)s\n" % {'key': k, 'value': v},
+        logging.info("%(key)s: %(value)s\n" % {'key': k, 'value': v})
 
     return HttpResponse("TASK UPDATE API")
     
